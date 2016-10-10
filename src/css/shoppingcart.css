@@ -1,0 +1,180 @@
+.header,
+.head-logo,
+.daohang,
+.goods,
+.content,
+.foot,
+.footer {	width: 990px;	margin: 0 auto;	
+}
+body{color: #333;background:papayawhip;}
+.fl {	float: left;}
+.fr {	float: right;}
+/*****head*******/
+.head {	height: 32px;	background: #F5F5F5;	border-bottom: 1px solid #e6e6e6;}
+.headleft {	color: #daccda;}
+.headleft a {	color: #666;	line-height: 30px;}
+.headleft span{color: black;}
+.headleft i{color: red;}
+.header {	clear: both;	height: 29px;	background: #F5F5F5;	}
+.header a:hover {	text-decoration: underline;	color: #c00;}
+.head-list li {	float: left;position: relative;	line-height: 33px;	z-index: 100;}
+.head-list li a{color: blue;}
+.head-list {overflow: hidden;color: #666;}
+
+
+/***********headlogo***********/
+
+.headlogo {
+	height: 80px;
+	position: relative;
+	overflow: hidden;
+	background: #fff;
+}
+
+.head-logo {
+	height:80px;
+	position: relative;
+}
+
+.head-logo .logo {
+	margin-top: 10px;
+	/*width: 274px;
+	height: 69px;*/
+}
+
+.head-logo .sousuo {
+	margin: 0 auto;
+	width: 305px;
+	height: 36px;
+	position: relative;
+	top: -45px;
+	right: 0;
+}
+
+.head-logo .sousuo .search {
+	position: relative;
+	width: 305px;
+	height: 36px;
+}
+
+.head-logo .sousuo .search input {
+	float: left;
+}
+
+.head-logo .sousuo .search-txt {
+	position: absolute;
+	left: 0;
+	width: 236px;
+	line-height: 30px;
+	height: 30px;
+	border: 1px solid #d9c7a7;
+	font-size: 14px;
+	padding: 0 5px;
+	color: #666;
+}
+
+.head-logo .search-sousuo {
+	position: absolute;
+	top: 0;
+	right: 0px;
+	width:66px;
+	height: 32px;
+	background: #C40000;
+	font-size: 14px;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	font-family: "微软雅黑";
+	cursor: pointer;
+	border: none;
+}
+
+/**********导航栏***********/
+
+.outdaohang {
+	height: 40px;
+	background: #ce1a1b;
+}
+
+.daohang {
+	height: 40px;
+	position: relative;
+}
+
+.daohang-list2 li {
+	cursor: pointer;
+	float: left;
+	color: #fff;
+	line-height: 40px;
+	text-align: center;
+	padding: 0 10px;
+}
+
+.daohang-list2 li a {
+	color: #fff;
+	font-size: 16px;
+	display: block;
+}
+
+.daohang-list2 li:hover {
+	background: #b1191a;
+}
+
+.daohang-list2 {
+	overflow: hidden;
+	float: left;
+	
+}
+
+.daohang .daohanglast{
+	position: absolute;
+	display: block;
+	width: 96px;
+	height: 40px;
+	background: black;
+	color: #fff;
+	text-align: center;
+	right:0;
+	
+}
+
+.daohang .daohanglast {
+	color: #fff;
+	font-size: 14px;
+	line-height: 40px;
+}
+
+.daohang .daohanglast:hover {
+	text-decoration: underline;
+	color: #fff;
+}
+
+/************content**************/
+.content{margin-top: 20px;margin-bottom: 20px;overflow: hidden;}
+.content-left{height:400px;width: 730px;float: left;margin-right: 10px;overflow: hidden;background: #fff;padding: 29px 10px 0 10px;}
+.content-right{width: 228px;float:right;overflow: hidden;border: 1px solid #d9c7a7;padding-bottom: 20px;background: #fff;}
+.content-left .left-list{height: 34px;padding: 9px 10px 0 10px;border: 1px solid #d9c7a7;}
+.content-left .left-list li{float: left;line-height: 32px;height: 32px;margin-right: 10px;}
+.content-left .left-list li a{padding:0 15px;font-size: 14px;text-align: center;color: #333;display: block;line-height: 32px;height: 32px;}
+/*.content-left .left-list li a:active{border-top:1px solid red ;}
+.content-left .left-list li a:visited{border-top:1px solid red ;}*/
+.content-right h3{line-height: 30px;padding-left: 10px;font-size: 14px;font-weight: bold;color: black;border-bottom:1px solid #d9c7a7 ;}
+.content-right ul{padding: 9px 10px;}
+.content-right ul li{height: 47px;border-bottom: 1px solid #d9c7a7;padding: 6px 5px 10px 5px;}
+.content-right ul li a{font-size: 16px;line-height:26px;display: block;font-weight: bold;}
+.content-right ul li p{line-height: 20px;color: #999;}
+
+/********************foot******************/
+.foot{overflow:hidden;margin-top: 30px;border-top: 2px solid #a60d0d;}
+.foot_top{width: 990px;height: 128px;padding: 20px 0;border-bottom: 1px solid #ebdec6;}
+.foot_top ul{float: left;width: 130px;padding: 0 15px;border-right: 1px dashed #ebdec6;height: 134px;}
+.foot_top ul li{margin-top: 10px;font-size: 12px;}
+.foot_top ul h3{font-size: 16px;color: #080808;margin-bottom: 20px;}
+.foot_bottom{width: 990px;height: 40px;}
+.foot_bottom span{color: #666;line-height: 40px;}
+.foot_bottom p{float: right;}
+.foot_bottom  p a{display: block;float: left;margin-right: 5px;color: #333;line-height: 40px;}
+.foot_bottom  p a:hover{text-decoration: underline;}
+
+
+

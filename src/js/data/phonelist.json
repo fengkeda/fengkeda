@@ -1,0 +1,284 @@
+[	
+{
+		"id":"G001",
+		"title":"阿巴町儿童智能手表团购价699元",
+		"text":"gps定位 7重定位 一键求救 双向通话 单向监听",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a1.jpg",
+		"url":"xiangqing.html",
+		"price":799,
+		"off":0.87
+	},
+		{
+		"id":"G002",
+		"title":"儿童电话手表 手机插卡定位智能手表",
+		"text":"语音群聊 能讲故事听歌 待机时间长 安全低辐射",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a2.jpg",
+		"url":"xiangqing.html",
+		"price":299,
+		"off":0.25
+	},
+			{
+		"id":"G003",
+		"title":"智能触屏电话手表 送8G内存卡 ！",
+		"text":"智能手表 手机插卡触屏电话手表 苹果安卓通用 蓝牙+通话定位 送8G内存卡！仅支持联通移动卡 不支持电信卡",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a3.jpg",
+		"url":"xiangqing.html",
+		"price":398,
+		"off":0.25
+	},
+	{
+		"id":"G004",
+		"title":"美苏小N锅电煮锅 D型手柄 无负担吃喝",
+		"text":"一体式锅身 时尚彩钢 不锈钢内胆 D型手柄 1.5L大容量",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a4.jpg",
+		"url":"xiangqing.html",
+		"price":69,
+		"off":0.51
+	},
+	{
+		"id":"G005",
+		"title":"永日充电式三刀头剃须刀 智能防夹须",
+		"text":"剃须静音更舒心，高能续航电池，充电8小时，使用15天，打造个性胡须！",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a5.jpg",
+		"url":"xiangqing.html",
+		"price":89,
+		"off":0.64
+	},
+		{
+		"id":"G006",
+		"title":"乐视 乐Pro 3（6GB/全网通）新品限量开团！",
+		"text":"高通骁龙821处理器；NFC乐镜指纹；2.5D弧面玻璃屏幕；",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a6.jpg",
+		"url":"xiangqing.html",
+		"price":2499,
+		"off":0.9
+	},
+	{
+		"id":"G007",
+		"title":"创意柠檬水果插座 环绕型快冲 三色可选",
+		"text":"充电也要高颜值，智能USB充电，大功率自动分配电流，快速充电！环绕型快速充电站，桌面整洁收纳！",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a7.jpg",
+		"url":"xiangqing.html",
+		"price":69,
+		"off":0.43
+	},
+	{
+		"id":"G008",
+		"title":"荣耀 V8（标准版全/网通）现货速发！",
+		"text":"精致外观，4GB+32GB，双1200万像素平行镜头，5.7英寸FHD屏，搭载麒麟950系列芯片，3500mAh电池长久续航",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a8.jpg",
+		"url":"xiangqing.html",
+		"price":2499,
+		"off":0.96
+	},
+	{
+		"id":"G009",
+		"title":"华为Mate 8（/3GB RAM/全网通）",
+		"text":"NFC支付充值,1600万+800万双摄像头，真八核，6英寸大屏",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a9.jpg",
+		"url":"xiangqing.html",
+		"price":2755,
+		"off":0.95
+	},
+	{
+		"id":"G010",
+		"title":"微星GeForce GTX 1070 DUKE 8G 暗黑龙爵",
+		"text":"三风扇设计 支持RGB全彩 全新Pascal架构，采用16nm全新工艺 秒杀GTX980TI",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a10.jpg",
+		"url":"xiangqing.html",
+		"price":3199,
+		"off":0.9
+	},
+	{
+		"id":"G011",
+		"title":"三星 GALAXY Note 4(N9108V/移动4G)抄底价!",
+		"text":"5.7英寸,2K高清屏！超高像素摄像头，前置370万像素后置1600万像素。",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a11.jpg",
+		"url":"xiangqing.html",
+		"price":1599,
+		"off":0.91
+	},
+	{
+		"id":"G012",
+		"title":"影驰 GeForce GTX 1060骁将团购仅1799元",
+		"text":"显存位宽192bit，显存容量6144MB，全新帕斯卡架构GP106核心 低功耗高性能 甜点级游戏显卡",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a12.jpg",
+		"url":"xiangqing.html",
+		"price":1999,
+		"off":0.91
+	},
+	{
+		"id":"G013",
+		"title":"索尼 RX100 黑卡口袋机皇 年轻拒绝负重！",
+		"text":"高端消费黑卡，高感光度，优良色彩还原，2020万像素大尺寸CMOS传感器，大光圈广角。",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a13.jpg",
+		"url":"xiangqing.html",
+		"price":2599,
+		"off":0.94
+	},
+	{
+		"id":"G014",
+		"title":"尼康 D7200中端单反机身 发票联保",
+		"text":"2416万像素高画质，双SD卡插槽，51点自动对焦系统，每秒约6幅连拍速度，优质影像媲美高端单反！",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a18.jpg",
+		"url":"xiangqing.html",
+		"price":7900,
+		"off":0.54
+	},
+	{
+		"id":"G015",
+		"title":"佳能55-250mm 拆机远摄变焦镜",
+		"text":"APS半幅镜头， f/4-5.6 IS STM，IS影像稳定4级，对焦快速稳定，DC马达，穷人摄影三宝之一！",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a15.jpg",
+		"url":"xiangqing.html",
+		"price":1899,
+		"off":0.63
+	},
+	{
+		"id":"G016",
+		"title":"尼康 尼克尔镜头 AF-S 28-300mm f/3.5-5.6G",
+		"text":"立省千元！28-300mm f/3.5-5.6G ED VR 防抖广角长焦单反镜头",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a16.jpg",
+		"url":"xiangqing.html",
+		"price":6399,
+		"off":0.79
+	},
+	{
+		"id":"G017",
+		"title":"三风扇设计 iGame 1060烈焰战神X-6GD5 Top",
+		"text":"七彩虹 iGame 1060烈焰战神X-6GD5 Top",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a17.jpg",
+		"url":"xiangqing.html",
+		"price":2399,
+		"off":0.83
+	},
+	{
+		"id":"G018",
+		"title":"佳能 EOS M10套机(15-45mm)",
+		"text":"外观时尚，翻转触控屏，内置WiFi与NFC",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a18.jpg",
+		"url":"xiangqing.html",
+		"price":2599,
+		"off":0.84
+	},
+	{
+		"id":"G019",
+		"title":"影驰 GTX 950虎将 959元团购",
+		"text":"影驰 GTX950虎将 2GD5 128Bit 游戏显卡 90W超低功耗 支持4K输出",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a19.jpg",
+		"url":"xiangqing.html",
+		"price":1099,
+		"off":0.87
+	},
+	{
+		"id":"G020",
+		"title":"苹果 iPhone 6(全网通)现货、限量、新低！",
+		"text":"视网膜Retina技术，Touch ID 指纹识别，A8 处理器，M8 运动协处理器",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a20.jpg",
+		"url":"xiangqing.html",
+		"price":3590,
+		"off":0.92
+	},
+	{
+		"id":"G021",
+		"title":"荣耀畅玩5A（移动4G）青春好搭档 ！",
+		"text":"荣耀 畅玩5A（CAM-TL00H/移动4G）",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a21.jpg",
+		"url":"xiangqing.html",
+		"price":729,
+		"off":0.9
+	},
+	{
+		"id":"G022",
+		"title":"中兴 Blade A601（全网通）老人手机 备用机",
+		"text":"5.0英寸舒适握感，全网通三网通吃，4000毫安持久待机，送长辈 作备用机优选！",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a22.jpg",
+		"url":"xiangqing.html",
+		"price":599,
+		"off":0.66
+	},
+	{
+		"id":"G023",
+		"title":"三风扇设计 iGame 1060烈焰战神X-6GD5 Top",
+		"text":"七彩虹 iGame 1060烈焰战神X-6GD5 Top",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a23.jpg",
+		"url":"xiangqing.html",
+		"price":2399,
+		"off":0.83
+	},
+	{
+		"id":"G024",
+		"title":"佳能 EOS M10套机(15-45mm)",
+		"text":"外观时尚，翻转触控屏，内置WiFi与NFC",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a24.jpg",
+		"url":"xiangqing.html",
+		"price":2600,
+		"off":0.94
+	},
+	{
+		"id":"G024",
+		"title":"佳能 EOS M10套机(15-45mm)",
+		"text":"外观时尚，翻转触控屏，内置WiFi与NFC",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a25.jpg",
+		"url":"xiangqing.html",
+		"price":2600,
+		"off":0.94
+	},
+	{
+		"id":"G024",
+		"title":"佳能 EOS M10套机(15-45mm)",
+		"text":"外观时尚，翻转触控屏，内置WiFi与NFC",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a26.jpg",
+		"url":"xiangqing.html",
+		"price":2600,
+		"off":0.94
+	},	
+	{
+		"id":"G024",
+		"title":"佳能 EOS M10套机(15-45mm)",
+		"text":"外观时尚，翻转触控屏，内置WiFi与NFC",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a27.jpg",
+		"url":"xiangqing.html",
+		"price":2600,
+		"off":0.94
+	},
+	{
+		"id":"G024",
+		"title":"佳能 EOS M10套机(15-45mm)",
+		"text":"外观时尚，翻转触控屏，内置WiFi与NFC",
+		"category":"shoes",
+		"imgurl":"images/phonelist_img/a28.jpg",
+		"url":"xiangqing.html",
+		"price":2600,
+		"off":0.94
+	}
+	]
+
+

@@ -1,0 +1,35 @@
+.head{width: 990px; margin: 0 auto;font-size: 14px;color: #757474;}
+/**********head*************/
+.head{height:70px ;padding:10px 0;}
+.head-logo{height:70px;background: #fff;width: 350px;float: left;}
+.head-logo img{float: left;padding-right:5px ;margin-top:10px;}
+.head-logo span{float: right;display: block;line-height: 70px;}
+.head-right{float: right;}
+.head-right p{line-height: 70px;color: #212121;}
+.head-right p a{padding: 3px 4px;color:#d01e1e ;}
+.head-right p a:hover{background: #d01e1e;color: #fff;}
+
+/********content******************/
+.content{width: 990px;margin: 0 auto;margin-top: 30px;overflow: hidden;border: 1px solid #e6e6e6;}
+.content-img{width: 520px;height:352px;background:url(../img/ad2.jpg) no-repeat left top;float: left;}
+.content-form{width: 298px;height: 348px;float: right;padding:0 85px;position: relative;}
+.content-form .p{height: 28px;margin-top: 20px;margin-bottom: 30px;} 
+.txt{top:60px;background: #F5E79E;color: red;position: absolute;height: 20px;width: 289px;line-height: 20px;padding-left: 10px;}
+.content-form span{font-size: 18px;float: left;line-height: 28px;}
+.content-form a{float: right;line-height: 28px;}
+.username,.pass{width: 278px;height: 22px;padding: 8px 10px;margin-bottom: 10px;border: 1px solid #cdcdcd;}
+.content-form .help{float: right;color: blue;}
+.content-form .log{width: 290px;height: 40px;line-height: 40px;color: #fff;text-align: center;margin-left: 5px;background: #ce1a1b;border-radius: 3px;border: none;margin-top: 20px;}
+
+
+
+/**************foot****************/
+.foot{height: 56px;width: 100%;border-top: 1px solid #e7e7e7;margin-top: 70px;}
+
+.footer{width: 980px;margin: 0 auto;height: 46px;font-size: 12px;color:#666 ;padding-top: 10px;}
+.footer a{margin-top: 20px;}
+.footer a:hover{color: red;text-decoration: underline;}
+.footer .aa1{padding-right: 20px;}
+.footer .aa2,.{padding-right: 15px;}
+.footer .aa2,.footer .aa3{padding:0 15px;}
+.footer p{float: right;}

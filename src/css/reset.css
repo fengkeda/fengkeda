@@ -1,0 +1,14 @@
+*{ padding:0; margin:0;}
+h1,h2,h3,h4,h5,h6{ font-size:100%; line-height:100%; font-weight:normal;}
+body{ font-size:12px;font-family: "Microsoft yahei"!important;}
+li{ list-style:none;}
+a{ text-decoration:none; color:#666;}
+i,em{ font-style:normal;}
+strong,b{ font-weight:normal;}
+input{/*outline:none; border:none 0;*/padding:0;}
+img{display:block; vertical-align:top;}
+li{ list-style:none;}
+a img{border:0; }
+img{display:block;}
+table,th,td,tr{padding:0;}
+table{border-collapse:collapse;}

@@ -1,0 +1,49 @@
+.xcarousel{position: relative;overflow:hidden;}
+.xcarousel ul{position: relative;list-style: none;padding:0;margin:0;}
+.xcarousel li{overflow:hidden;}
+.xcarousel li img{display: block;}
+.a1{display: block;opacity:0.5; background: url(images/btn.gif) no-repeat left top; width: 60px;height: 60px;position: absolute;top: 130px;left:5px;
+}
+.a2{display: block;opacity:0.5; background: url(images/btn.gif) no-repeat left -60px; width: 60px;height: 60px;position: absolute;top: 130px;right: 5px;
+}
+#pp .aa {
+				display: block;
+				float: left;
+				margin-left: 10px;
+				height: 20px;
+	            width: 20px;
+	             border-radius: 20px;
+				color: #fff;
+				background: dodgerblue;
+				opacity: 1;
+				text-decoration: none;
+				text-align: center;
+				line-height: 35px;
+			}
+			
+#pp a:hover {
+	opacity: 1;
+	color: #fff;
+	background: dodgerblue;
+			}
+			
+#pp {
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+			}
+			
+#pp a {
+	display: block;
+	float: left;
+	margin-left: 10px;
+	height: 20px;
+	width: 20px;
+	border-radius: 20px;
+	color: black;
+	background: #CCCCCC;
+	opacity: 0.7;
+	text-decoration: none;
+	text-align: center;
+	line-height: 35px;
+			}
