@@ -18,7 +18,7 @@ onload = function() {
 				otxt[0].innerHTML = '手机号输入合法';
 
 			} else {
-				otxt[0].innerHTML = '手机号输入不合法';
+				otxt[0].innerHTML = '请输入正确的手机号';
 				oinput[0].value = '';
 			}
 
@@ -94,9 +94,12 @@ onload = function() {
 
 $(function() {
 	var $input = $(".form").children().find('input');
-
+    var $strong = $('.form').find('strong');
 	$input.eq(5).on("click", function() {
+		if($input.eq(0).val() == ''||$input.eq(1).val()== ''||$input.eq(2).val()== ''||$input.eq(3).val()== ''){
 		//获取用户名 手机号码 和密码
+		$strong.eq(4).html('请完善信息！');
+		}else{
 		var phone = $input.eq(0).val();
 		var pass = $input.eq(3).val();
 		var d = new Date();
@@ -104,7 +107,12 @@ $(function() {
 		setCookie("phone", phone, d);
 		setCookie("password", pass, d);
 		var phone = getCookie("phone");
-		console.log(phone);
+		console.log(phone);	
+		
+		$strong.html('');
+		$input.eq(5).val("正在注册...");
+	    location.assign("../index.html");
+		}
 		//	    $input.val('');
 	});
 })

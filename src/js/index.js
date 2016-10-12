@@ -43,12 +43,24 @@ function xiding(){
 						var $li = $('<li/>');
 						var $div = $('<div/>');
 						$('<a/>').attr({href:item.url}).html('<img src="'+item.imgurl+'"/>').appendTo($div);
+						var $time = $('<div/>').addClass('time').appendTo($div);
+						var $p = $('<p/>').addClass('time_p').appendTo($time);
+						var $span = $('<span/>').addClass('countdown').html('剩余：').appendTo($p);
+						var $em1 = $('<em/>').addClass('day').html(item.day).appendTo($span);
+						$('<b/>').html('天').appendTo($span);
+						var $em1 = $('<em/>').addClass('hour').html(item.hour).appendTo($span);
+						$('<b/>').html('时').appendTo($span);
+						var $em1 = $('<em/>').addClass('minute').html(item.minute).appendTo($span);
+						$('<b/>').html('分').appendTo($span);
+						var $em1 = $('<em/>').addClass('second').html(item.second).appendTo($span);
+						$('<b/>').html('秒').appendTo($span);
+						$('<i/>').html(item.guanzhu + '关注').appendTo($p);
 						var $goods = $('<div/>').addClass('goods');
 						$('<a/>').attr({href:item.url}).html(item.title).addClass('goodstitle').appendTo($goods);
 						$('<p/>').html(item.text).appendTo($goods);
 
                         var price = (item.price*item.off).toFixed(2)
-                        $('<span/>').addClass('price fl').html('<i>￥</i>'+price).appendTo($goods);
+                        $('<span/>').addClass('price fl').html(price).appendTo($goods);
                          $('<span/>').addClass('oldprice fl').html('￥'+item.price).appendTo($goods);
                          var $off = (item.off * 10).toFixed(1);
                          $('<span/>').addClass('discount fl').html($off + '折').appendTo($goods);
@@ -67,16 +79,6 @@ function xiding(){
 				$.ajax();
 			})
 
-			// 懒加载效果
-			// 给window绑定scroll事件，当差不多滚动到底部是加载更多内容
-//			$(window).on('scroll',function(){
-//				// 获取滚动条滚动过的距离
-//				var scrollTop = $(window).scrollTop();
-//
-//				// 当差不多滚动到底部是加载更多内容
-//				if(scrollTop >= $(document).height() - $(window).height() - 100){
-//					$.ajax();
-//				}
-//			})
+
 
 		})

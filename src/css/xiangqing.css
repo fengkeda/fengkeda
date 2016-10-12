@@ -146,31 +146,34 @@ body{color: #333;}
 }
 
 /*************goods***************/
-.goods{color: #666;overflow: hidden;}
+.goods{color: #666;overflow: hidden;position: relative;}
 .goods-top{height: 47px;}
 .goods-top p{height: 47px;line-height: 47px;}
 .goods-top p a{color: black;margin-right: 10px;}
 .goods-top p a:hover{text-decoration: underline;color: #c00;}
 .goods-top p i{margin-right: 10px;}
-.deal{padding-bottom: 20px;}
+.deal{padding-bottom: 20px;overflow: hidden;}
 .deal .goods-img{width: 450px;height: 377px;float: left;}
 .deal .goods-img img{width: 450px;height: 336px;margin-bottom: 20px;}
-.deal .goods-img a{margin: 20px 20px 0px 0;}
+.deal .goods-img a{margin: 20px 20px 0px 0;display: block;float: left;}
 .deal .goods-txt{width: 520px;height: 326px;float: right;}
-.deal .goods-txt h3{font-size: 24px;line-height: 34px;}
+.deal .goods-txt h3{font-size: 24px;line-height: 34px;color: black;}
 .deal .goods-txt p{font-size: 14px;margin-top: 10px;}
 .deal .goods-txt .jiage{height: 52px;background: #f7f7f7;margin-top: 30px;padding: 10px 20px;font-size: 24px;color: #f12721;}
 .deal .goods-txt .jiage span{font-size: 42px;color: #f12721;margin-right: 10px;}
 .deal .goods-txt .jiage del{font-size: 14px;color:#666 ;margin-right: 10px;}
 .deal .goods-txt .jiage em{padding: 1px 6px;font-size: 14px;background: #f12721;color: #fff;}
-.deal .goods-txt .buy{height: 35px;border-bottom: 1px dotted #e6e6e6;border-top: 1px dotted #e6e6e6;}
+.deal .goods-txt .buy{height: 35px;border-bottom: 1px dotted #ccc;border-top: 1px dotted #ccc;}
 .deal .goods-txt .buy span{line-height: 35px;display: block;float: left;width: 175px;text-align: center;}
 .deal .goods-txt .buynow{display: block;width: 220px;height: 50px;text-align: center;color: #fff;line-height: 50px;background: #ce1a1b;font-size: 18px;margin-top: 20px;}
-
+/************商品数量***********/
+/*.shuliang{width: 200px;height: 500px;background:paleturquoise;position: absolute;z-index:999;border-radius: 8px;}
+.shuliang button{width: 30px;height: 30px;display: inline-block;font-size: 18px;}*/
+/*.shuliang span{display: inline-block;width: 20px;height: 20px;border: 1px solid #666;}*/
 /****圆形图*********/
 
 .lbt-bottom {
-	width: 1010px;	margin: 0 auto;	
+	width: 1010px;	margin: 20px auto 0;	
 	height: 80px;
 	background: #fafafa;
 }
@@ -182,7 +185,7 @@ body{color: #333;}
 	background: url(http://icon.zol-img.com.cn/newtuan/tuan_detail/siash.png) no-repeat 172px center;
 	line-height: 80px;
 	font-size: 18px;
-	color: #ea6161;
+	color: #333;
 }
 
 .lbt-bottom li i {
@@ -243,9 +246,30 @@ body{color: #333;}
 .product{padding: 40px 0 0;}
 .product h3{padding-bottom: 10px;border-bottom: 1px solid #ebebeb;margin-bottom: 10px;}
 .product h3 span{font-weight: normal;font-size: 16px;color: red;border-bottom: 1px solid #f12721;width: 100px;padding-bottom: 7px;}
-..product .product_list li img{width: 750px;height: 562px;}
+..product .product_list li img{width: 750px;margin-bottom: 10px;}
+.product_list li{margin-bottom: 10px;}
+/****fixed_code******/
+.fixed_code{position: fixed;width:149px ;height: 127px;top: 200px;left: 10px;}
+.fixed_code .fcode{position: relative; width: 89px;height: 117;border:1px solid #e6e6e6;padding: 0px 10px 10px;background: #fff;}
+.fixed_code img{width: 85px;height: 85px;margin-top:10px ;}
+.fixed_code i{font-size: 12px;margin-top: 30px;display: block;}
+.fixed_code .shanchu{font-size: 24px;position: absolute;top: 0;right: 0;cursor: pointer;}
 
 
+/**********time*****************/
+ .time{width:360px; position: absolute;bottom: 60px;height: 31px;left: 465px;}
+ .time_p{color: #666;line-height: 31px;}
+  .time_p .day,.time_p .hour,.time_p .minute,.time_p .second{color: red;}
+ .time_p .countdown{float: left;margin-left: 30px;}
+ .time_p i{float: right;}
+/*.goodslist p {
+	color: #999;
+	width: 330px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-bottom: 20px;
+}*/
 
 
 
@@ -256,8 +280,11 @@ body{color: #333;}
 .relativ,.lately{padding: 0 15px 15px;border: 1px solid #ebebeb;margin-top: 20px;}
 .relativ h4{font-size: 16px;line-height: 56px;}
 .goodslist{overflow: hidden;width: 210px;}
-.goodslist li {	position: relative;	width: 210px;padding-bottom: 40px;border-bottom: 1px solid #ebebeb;margin-top: 20px;
-}
+#goodslist_2{width: 750px;}
+#goodslist_2 li{float: left;width: 165px;margin-right: 16px;border-bottom:none;padding-bottom: 20px;}
+#goodslist_2  a img{width: 165px;height: 147px;}
+#goodslist_2 .firstli{margin-top: 20px;}
+.goodslist li {	position: relative;	width: 210px;padding-bottom: 40px;border-bottom: 1px solid #ebebeb;margin-top: 20px;}
 .goodslist .firstli{margin-top: 0;}
 .goodslist a img{width: 210px;height: 147px;}
 .goodslist a span{margin-top: 10px;display: block;color: #363636;}

@@ -4,23 +4,27 @@
 		<meta charset="UTF-8">
 			<link type="text/css" rel="stylesheet" href="../css/reset.css"/>
 			<link type="text/css" rel="stylesheet" href="../css/xiangqing.css"/>
-			<link type="text/css" rel="stylesheet" href="../js/xzoom/jquery.xzoom.css"/>
+			<link type="text/css" rel="stylesheet" href="../js/xzoom2/jquery.xzoom.css"/>
 		<title></title>
-		<script src="../../ajax/js/jquery-1.12.0.js"></script>
+	    <script src="../js/jquery-1.12.0.js"></script>
 		<script src="../js/xiangqing.js"></script>
 		<script src="../js/backtop.js"></script>
-		<script src="../js/xzoom/jquery.xzoom.js"></script>
+		<script src="../js/xzoom2/jquery.xzoom.js"></script>
+		<script src="../js/gouwuche.js"></script>
+		<script src="../js/time.js"></script>
 		
 		<script>
-		    jQuery(function(){
-		    	jQuery(function($){
-		    		
-			$('.goods-img').xzoom({position:'right'});
-		    });
-		    	xiding();
-		    })
-			onload = function(){
-				move("backtop");
+		jQuery(function() {
+
+	       $('.goods-img').xzoom({
+		   position: 'right'
+	     });
+	        xiding();
+	       
+             });
+
+onload = function() {
+		move("backtop");
 			}
 		</script>
 	</head>
@@ -38,13 +42,13 @@
 			<ul class="head-list r1">
 				<li class="head-list-txt">您好，欢迎来Z团购物！</li>
 				<li class="first">
-					请<a href="#">登录</a>
+					请<a href="log.html">登录</a>
 				</li>
 				<li>
-					<a href="html/zhuce.html">注册</a>
+					<a href="zhuce.html">注册</a>
 				</li>
-				<li>
-					<a href="#"> 我的订单</a>
+				<li class="dingdan">
+					<a href="shoppingcart.html"> 我的订单</a>
 				</li>
 			</ul>
 		</div>
@@ -99,21 +103,30 @@
 			</div>
 			<div class="deal">
 				<div class="goods-img">
-					<img src="../images/561.jpg" xzoom-big="../images/561.jpg"/>
-					<a href="#">分享</a><a href="#">手机下单</a>
+					<!--<img src="../images/561.jpg" xzoom-big="../images/561.jpg"/>-->
+					<!--<a href="#">分享</a><a href="#">手机下单</a>-->
 				</div>
+				
 				<div class="goods-txt">
-					<h3>智能触屏电话手表 送8G内存卡</h3>
+					<h3 class="goods_title">智能触屏电话手表 送8G内存卡</h3>
 					<p>智能手表 手机插卡触屏电话手表 苹果安卓通用 蓝牙+通话定位 送8G内存卡！仅支持联通移动卡 不支持电信卡</p>
 				    <div class="jiage">
-				    	￥<span class="now-price">99</span><del class="oldprice">￥309</del><em class="discount">2.5折</em>
+				    	<span class="now-price"></span><del class="oldprice">￥309</del><em class="discount">2.5折</em>
 				    </div>
 				    <div class="buy">		
 				    <span><i>11</i><em>人购买</em></span>  <span>暂无评价<span>
 				  </div>
-				  <a class="buynow" href="#">立刻购买</a>
+				  <!--<div class="shuliang"><button>-</button><span class="Count">1</span><button>+</button></div>-->
+				  <a class="buynow" href="#">立刻抢购</a>
+				  <div class="time">
+							<p class="time_p">
+                                <span class="countdown">剩余：<em class="day"></em><b>天</b><em class="hour"></em>时<em class="minute"></em>分<em class="second"></em>秒</span>
+                                 <!--   <i>1795人关注</i>-->
+                 </p>
 				</div>
+				
 			</div>
+		</div>
 		</div>
 		<!----------------------------->
 		<a href="http://tuan.zol.com/index.php?c=Service" target="_blank" class="list-a">
@@ -143,6 +156,13 @@
 		
 		
 		<!--content-->
+		<div class="fixed_code">
+		<div class="fcode">
+			<span class="shanchu">&times</span>
+			<i>官方微信帐号</i>
+			<img src="../img/code.jpg"/>
+		</div>
+		</div>
 		<div class="content">
 			<div class="content-left">
 				<div class="left-list">
@@ -153,7 +173,7 @@
 						<li><a href="#">包装清单</a></li>
 						<li><a href="#">配送及售后</a></li>
 					</ul>
-					<p class="fr hiding"><i>￥99</i><a href="#">立刻抢购</a></p>
+					<p class="fr hiding"><i>￥99</i><a href="#" class="gogo">立刻抢购</a></p>
 				</div>
 				<div class="reconmment">
 					<h3><span>给力推荐</span></h3>
@@ -185,11 +205,37 @@
 						<li><img src="../img/xiangqing-img/ChMkJ1aUxVuIRe34AASspTppBpMAAHO2wFiPdEABKy9943.jpg"/></li>
 						<li><img src="../img/xiangqing-img/ChMkJ1fSTjGIfjRsAAD5pBTdznQAAVJHwNKzMkAAPm8396.jpg"/></li>
 						<li><img src="../img/xiangqing-img/ChMkJ1fSTjmICmofAAFafx9aMqYAAVJHwOLRoQAAVqX201.jpg"/></li>
+						<li><img src="../img/xiangqing-img/fazhan.jpg"/></li>
+						<li><img src="../img/xiangqing-img/koubei.jpg"/></li>
+						<li><img src="../img/xiangqing-img/shouhou.jpg"/></li>
+						<li><img src="../img/xiangqing-img/tishi.jpg"/></li>
+						
 					</ul>
 				</div>
 				
 				
-				
+				<div class="relativ" id="relativ_2">
+					<h4>相关产品推荐</h4>
+					<ul class="goodslist" id="goodslist_2">
+						<li class="firstli">
+						<a href="#"><img src="../img/xiangqing-img/ChMkJlfqN7mIKZvXAAD0Wt0WalMAAWZ4wLo3fAAAPRy156.jpg" /><span>酷睿i7！联想 IdeaPad 710S超极本 256G固态</span>	</a>																										
+						<p><span class="price fl"><i>￥</i>2888</span><span class="oldprice fl">3159</span><span class="work">已售出<i style="color: black;">56</i></span></p>														
+					    </li>
+					    <li>
+						<a href="#"><img src="../img/xiangqing-img/ChMkJlfqNj6IADRsAAD-JLjrPT0AAWZ4QIItd8AAP48618.jpg" /><span>ThinkPad L460商用级本 i5固态 六芯电池</span>	</a>																										
+						<p><span class="price fl"><i>￥</i>4899</span><span class="oldprice fl">5599</span><span class="work">已售出<i style="color: black;">41</i></span></p>														
+					    </li>
+					    <li>
+						<a href="#"><img src="../img/xiangqing-img/ChMkJlfSSHuILZODAACM0T3rBUEAAVJGACL0AwAAIzp747.jpg" /><span>国产良机！神舟 战神 K610D i7四核+2G独显</span>	</a>																										
+						<p><span class="price fl"><i>￥</i>5888</span><span class="oldprice fl">6659</span><span class="work">已售出<i style="color: black;">96</i></span></p>														
+					    </li>
+					    <li>
+						<a href="#"><img src="../img/xiangqing-img/ChMkJleqoG6ICw-kAAErdnVnnS8AAUUKAAN9-kAASuO398.jpg" /><span>立省千元！华硕U303L超极本 i7+8G+256G</span>	</a>																										
+						<p><span class="price fl"><i>￥</i>4999</span><span class="oldprice fl">5999</span><span class="work">已售出<i style="color: black;">36</i></span></p>														
+					    </li>
+					</ul>
+					
+				</div>
 				
 				
 				

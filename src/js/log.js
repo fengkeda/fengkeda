@@ -1,16 +1,3 @@
-//onload = function(){
-//	var oform = document.getElementById('form');
-//	var oinput = oform.getElementsByTagName('input');
-//	
-//	var oldphone = getCookie("phone");
-// 	var oldpassword = getCookie("password"); 
-// 	
-// 	if(oldphone && oldpassword){
-// 		
-// 		if(oldphone == oinput[0].value &)
-// 	}
-//}
-
 
 $(function(){
 	var $input = $('#form').find('input');
@@ -20,7 +7,11 @@ $(function(){
 	$txt.hide();
 	
 	$input.eq(0).on('blur',function(){
-		if(oldphone !== $input.eq(0).val() ){
+		if($input.eq(0).val()==''){
+			$txt.show();
+			$txt.html('请输入用户名');
+		}
+		else if(oldphone !== $input.eq(0).val() && $input.eq(0).val() !==''){
 			$txt.show();
 			$txt.html('手机号不存在');
 		}else{
@@ -30,7 +21,11 @@ $(function(){
 	})
 	
 	$input.eq(1).on('blur',function(){
-		if(oldpassword !== $input.eq(1).val() ){
+		if($input.eq(1).val()==''){
+			$txt.show();
+			$txt.html('请输入密码');
+		}
+		else if(oldpassword !== $input.eq(1).val() && $input.eq(1).val() !==''){
 			$txt.show();
 			$txt.html('密码不正确');
 		}else{
@@ -40,11 +35,15 @@ $(function(){
 	})
 	
 	$input.eq(2).on('click',function(){
-	if(oldphone == $input.eq(0).val() && oldpassword == $input.eq(1).val()){
+	if(oldphone == $input.eq(0).val() && oldpassword == $input.eq(1).val()&&$input.eq(1).val()!==''){
 		$txt.show();
 	    $txt.html('登录成功！');
 	    location.assign("../index.html");
-	}else{
+	}else if($input.eq(0).val() == ''&& $input.eq(1).val()==''){
+			$txt.show();
+		 $txt.html('请输入用户名或密码！');
+	}
+	else{
 		$txt.show();
 	    $txt.html('用户名或密码不正确！');
 	}

@@ -388,6 +388,7 @@
 	margin: 20px -20px 0px 0;
 	width: 1220px;
 	overflow: hidden;
+	
 }
 
 .goodslist li:hover {
@@ -405,6 +406,11 @@
 	text-decoration: underline;
 	color: #c00;
 }
+
+.goodslist .time{width:360px; position: absolute;top: 250px;height: 31px;    background: #000;opacity: .6;}
+.goodslist .time_p{color: #fff;line-height: 31px;}
+.goodslist .time_p .countdown{float: left;margin-left: 30px;}
+.goodslist .time_p i{float: right;}
 
 .goodslist p {
 	color: #999;
