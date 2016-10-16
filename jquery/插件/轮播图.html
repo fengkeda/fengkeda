@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图插件</title>
+	<link rel="stylesheet" href="xcarousel/jquery.xcarousel.css">
+	<script src="js/jquery-1.12.0.js"></script>
+	<script src="xcarousel/jquery.xcarousel.js"></script>
+	<!-- <script src="xcarousel/jquery.wpopover.js"></script> -->
+	<!-- <script src="js/plugins.js"></script> -->
+	<script>
+		// 写jquery代码的安全格式
+		jQuery(function($){
+			console.log($.fn);
+			$('.lbt').xcarousel({
+				// page:false,
+				autoPlay:false,
+				// buttons:false,
+				type:'fade'
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="lbt">
+		<ul>
+			<li><img src="images/001.jpg" alt=""></li>
+			<li><img src="images/002.jpg" alt=""></li>
+			<li><img src="images/003.jpg" alt=""></li>
+			<li><img src="images/004.jpg" alt=""></li>
+		</ul>
+	</div>
+	<!-- <div class="lbt">
+		<ul>
+			<li><img src="images/001.jpg" alt=""></li>
+			<li><img src="images/002.jpg" alt=""></li>
+			<li><img src="images/003.jpg" alt=""></li>
+			<li><img src="images/004.jpg" alt=""></li>
+		</ul>
+	</div> -->
+</body>
+</html>

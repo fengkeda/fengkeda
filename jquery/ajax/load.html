@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>页面加载事件</title>
+	<script src="js/jquery-1.12.0.js"></script>
+	<script>
+		// jquery load方式
+		// 第一种使用情况：当事件来使用
+		window.onload = function(){
+
+		}
+
+		// document ready事件
+		$(document).ready(function(){
+			var imgurl = 'http://img.tuku.cn/file_big/201501/39624d3bec2c460fa3d690e8d99e4e21.jpg';
+			var $img = $('<img/>');
+			$img.attr({src:imgurl}).appendTo('body');
+			$img.load(function(){
+				console.log($img.width(),$img.height());
+			})
+		});
+
+		// jquery下的window onload事件
+		$(window).load(function(){
+
+		});
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

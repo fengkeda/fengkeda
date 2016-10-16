@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度音乐</title>
+	<style>
+	body{font:14px '微软雅黑';}
+		ul{list-style:none;padding:0;margin:0;}
+		#datalist ul{overflow:hidden;font-size:14px;}
+		#datalist li{float:left;margin:10px;padding:10px;width:160px;height:280px;border:1px solid #ddd;overflow:hidden;}
+		#datalist li img{width:160px;}
+		#datalist .hot{color:#c00;}
+	</style>
+	<script src="js/jquery-1.12.0.js"></script>
+	<script>
+		/*
+			API:http://tingapi.ting.baidu.com/v1/restserver/ting
+			参数：
+				格式：method=baidu.ting.billboard.billList&type=1&size=10&offset=0
+
+				method：请求方式
+				type：
+					1-新歌榜,
+					2-热歌榜,
+					11-摇滚榜,
+					12-爵士,
+					16-流行,
+					21-欧美金曲榜,
+					22-经典老歌榜,
+					23-情歌对唱榜,
+					24-影视金曲榜,
+					25-网络歌曲榜
+				size：10 //返回条目数量
+				offset：0 //获取偏移
+
+
+			播放：
+				格式：method=baidu.ting.song.playAAC&songid=877578
+	          	参数：songid = 877578 //歌曲id
+
+
+		*/
+		$(function(){
+			// 请求列表：
+			// 利用百度音乐api制作音乐网站
+			$.ajax({
+				url:'http://tingapi.ting.baidu.com/v1/restserver/ting',
+				data:{
+					method:'baidu.ting.billboard.billList',
+					type:1,
+					size:50,
+					offset:0
+				},
+				dataType:'jsonp',
+				success:function(res){
+					console.log(res);
+
+					var $ul = $('<ul/>');
+					$.each(res.song_list,function(idx,song){
+						var $li = $('<li/>').attr({'data-id':song.song_id});
+						$('<a/>').attr({href:'#'}).html('<img src="'+song.pic_small+'"/>').appendTo($li);
+						$('<p/>').addClass('title').html(song.title).appendTo($li);
+						$('<p/>').addClass('singer').html('歌手：' + song.author).appendTo($li);
+						$('<p/>').addClass('hot').html('人气：' + song.hot).appendTo($li);
+						$li.appendTo($ul);
+					});
+
+					$('#datalist').empty();
+					$ul.appendTo('#datalist');
+				}
+			});
+
+
+			// 播放音乐
+			$('#datalist').on('click','li',function(){
+				var $self = $(this);
+				var song_id = $(this).attr('data-id');//$(this).data('id');
+
+				// 发送jsonp请求，得到歌曲信息
+				$.ajax({
+					url:'http://tingapi.ting.baidu.com/v1/restserver/ting',
+					data:{
+						method:'baidu.ting.song.playAAC',
+						songid:song_id
+					},
+					dataType:'jsonp',
+					success:function(res){
+						console.log(res);
+
+						// 利用audio标签实现音乐播放
+						// setTimeout(function(){
+						// 	$('<audio/>').attr({src:res.show_link,autoplay:true}).appendTo($self);
+						// },300);
+						console.log(res.bitrate.file_link)
+						$('#player').attr('src',res.bitrate.file_link);
+						$('#player')[0].play();
+					}
+				})
+			})
+		})
+		
+	</script>
+</head>
+<body>
+	<div id="datalist">
+		<!-- <ul>
+			<li>
+				<a href="#"><img src="images/g1.jpg"></a>
+				<p class="title">伤心太平洋</p>
+				<p class="singer">歌手：任贤齐</p>
+				<p class="hot">人气：6666</p>
+			</li>
+		</ul> -->
+	</div>
+	<audio src="" id="player"></audio>
+</body>
+</html>

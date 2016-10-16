@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery ui插件的使用</title>
+	<!-- 3、引入相关文件：样式、语言包 -->
+	<link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.css">
+	<style>
+		#box{width:100px;height:100px;background-color:#f00;}
+		#container{width:800px;height:300px;background-color: #efefef;border:1px solid #ccc;}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<div id="container"></div>
+
+	<h1>广州h5 1607班名单</h1>
+	<input type="text" id="namelist">
+
+	<h1>日期控件</h1>
+	html5:<input type="date">
+	<p>jqueryUI:
+	<input type="text" id="jqui"></p>
+	<!-- 1、引入jquery -->
+	<script src="jquery-1.12.0.js"></script>
+	<!-- 2、引入插件 -->
+	<script src="jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+	<script>
+		$(function(){
+			// 如何查找文档
+
+
+			// 拖拽效果
+			$('#box').draggable({
+				containment:'#container',
+				axis:'y'
+			}).resizable();
+
+
+			// autoComplete效果
+			var arr = '陈文杰,田方矿,吴怀宇,韦松吕,刘小平,杨华,廖旺萍,卢金红,赖鑫,黄甫江,刘亚飞,蔡霖澔,蒙世裕,韩江华,曾旺,蒙有才,杨宇航,周海强,陈芳玲,蓝康华,王福恒,朱冠亮,杜泳康,黄冼英,赵凯,汪康,廖玉兰,黄春松,李家新,周赐骏,覃淑燕,岑德顺,庞芝翠,陈梓鹏,黎寅华,王耀宗,付雷,刘祥,徐天伦,谢育强,徐枝国,冯科达,覃振源,王皓,周梓彬';
+
+			arr = arr.split(',');
+
+			$( "#namelist" ).autocomplete({
+			      source: arr
+			 });
+
+			$('#jqui').datepicker()
+		})
+	</script>
+</body>
+</html>

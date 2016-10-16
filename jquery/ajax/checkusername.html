@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>验证用户名是否存在</title>
+	<script src="js/jquery-1.12.0.js"></script>
+	<script>
+		$(function(){
+			/*$.get('/ajax/checkname',{regname:'张三plus'},function(res){
+				console.log(res)
+			})*/
+
+
+			// 点击按钮验证用户名是否被注册
+			var $username = $('#username');
+			var $btn = $username.next('button');
+			var $tips = $('#tips');
+			$btn.on('click',function(){
+				// 点击时先获取输入的用户名
+				var username = $username.val();
+				jQuery.ajax({
+					// type:'get',
+					url:'/ajax/checkname',
+					data:{regname:username},
+					success:function(res){
+						console.log(res);
+						if(res === 'true'){
+							$tips.css({color:'#0c0'}).html('恭喜你，注册成功');
+						}else{
+							$tips.css({color:'#c00'}).html('oo，你来晚了');
+						}
+					}
+				})
+			})
+		})
+	</script>
+</head>
+<body>
+	<input type="text" id="username"><button>检测</button>
+	<p id="tips"></p>
+</body>
+</html>

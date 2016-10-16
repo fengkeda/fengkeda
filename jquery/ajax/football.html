@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>足球解说</title>
+	<style>
+	body{padding:50px;}
+		ul{list-style: none;padding:0;margin:0;}/*reset*/
+		#datalist{border:1px solid #ddd;padding:15px;}
+		#datalist li{position:relative;padding:15px 5px;border-bottom:1px dotted #ccc;}
+		#datalist li .like,#datalist li .comment{
+			position:absolute;right:20px;top:10px;padding:5px;background-color:#efefef;border-radius:5px;
+		}
+		#datalist li .like{right:55px;background-color:#fc0;color:#fff;}
+		#page span{display:inline-block;margin:5px;width:40px;line-height:1.8;text-align: center;background-color:#dfdfdf;color:#666;}
+		#page span.active{background-color:#fc0;color:#fff;}
+
+	</style>
+	<script src="js/jquery-1.12.0.js"></script>
+	<script>
+		$(function(){
+			// 全局配置
+			// 页面所有ajax请求都使用这个配置
+			$.ajaxSetup({
+				url:'/ajax/football',
+				dataType:'json',
+				data:{pageNo:1},
+
+				// 同步请求
+				// async:false,
+				success:function(res){
+					console.log(res);
+
+					// 显示分页
+					// 21==>3,52=>6
+					var page = Math.ceil(res.total/res.pageCount);
+					$('#page').empty();
+					for(var i=1;i<=page;i++){
+						var $span = $('<span/>');
+
+						// 添加当前页高亮效果
+						if(i===res.pageNo){
+							$span.addClass('active');
+						}
+
+						$span.html(i).appendTo('#page');
+					}
+
+					// 遍历数据，并写入页面
+					var $ul = $('<ul/>');
+					$.each(res.data,function(idx,item){
+						$('<li/>').html('<strong>' + item.name + ':</strong> ' + item.content).appendTo($ul);
+					});
+					$('#datalist').empty();
+					$ul.appendTo('#datalist');
+				}
+			});
+
+			$.ajax();
+
+			$('#page').on('click','span',function(){
+				// console.log($(this).text());
+				$.ajax({
+					data:{pageNo:$(this).text()}
+				});
+			});
+		})
+	</script>
+</head>
+<body>
+	<div id="datalist"></div>
+	<div id="page"></div>
+</body>
+</html>

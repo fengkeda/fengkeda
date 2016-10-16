@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<script src="js/jquery-1.12.0.js"></script>
+	<script>
+		/*// 创建一个xhr对象
+		var xhr = new XMLHttpRequest();
+
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState===4 && xhr.status===200){
+				var p = document.createElement('p');
+				p.innerHTML =  xhr.responseText;
+
+				document.body.appendChild(p);
+			}
+		}
+
+		// 建立与服务器的连接
+		// url:数据请求地址（接口API）application programing interface
+		// http://10.16.156.19:3000/
+		// http://localhost:3000/
+		xhr.open('get','/ajax/ajaxtest',true);
+
+		xhr.send(null);*/
+
+		$(function(){
+			$('#btn').on('click',function(){
+				// jquery的ajax请求
+				jQuery.get('/ajax/getCity',function(res){
+					console.log(res);
+					var $select = $('<select/>');
+					$.each(res,function(idx,city){
+						var $option = $('<option/>');
+						$option.html(city).appendTo($select)
+					});
+					$select.appendTo('body');
+				},'json');
+
+				
+			})
+		})
+
+
+		/*
+		jquery.get()方法实现原理
+		var jQuery = {}
+		jQuery.get = function(url,callback,dataType){
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState ===4 && xhr.status === 200){
+					callback(xhr.responseText)
+				}
+			}
+			xhr.open('get',url,tru);
+			xhr.send();
+		}
+
+		jQuery.get('/ajax/getCity',function(res){
+			console.log(res);
+		},'json')*/
+		
+	</script>
+</head>
+<body>
+	<h2>ajax测试</h2>
+	<button id="btn">获取城市列表</button>
+</body>
+</html>

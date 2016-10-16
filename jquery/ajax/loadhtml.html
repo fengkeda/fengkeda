@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>页面加载事件</title>
+	<style>
+		ul{list-style:none;padding:0;margin:0;}
+		.datalist{overflow:hidden;}
+		.datalist li{float:left;margin:10px;padding:10px;width:180px;height:200px;border:1px solid #ddd;}
+		.datalist li img{width:180px;}
+	</style>
+	<script src="js/jquery-1.12.0.js"></script>
+	<script>
+		// jquery load方式
+		// 第二种使用情况：用来加载文本文件
+		$(function(){
+			$('#header').load('header.html');
+
+			$('.loading').show();
+			$('#footer').load('footer.html ul',function(){
+				$('.loading').hide();
+			});
+		});
+
+	</script>
+</head>
+<body>
+	<div id="header"></div>
+	<div id="mainbody">
+		<ul class="datalist">
+			<li><img src="images/g1.jpg" alt=""></li>
+			<li><img src="images/g2.jpg" alt=""></li>
+			<li><img src="images/g3.jpg" alt=""></li>
+			<li><img src="images/g4.jpg" alt=""></li>
+			<li><img src="images/g5.jpg" alt=""></li>
+			<li><img src="images/g6.jpg" alt=""></li>
+			<li><img src="images/g7.jpg" alt=""></li>
+			<li><img src="images/g8.jpg" alt=""></li>
+			<li><img src="images/g9.jpg" alt=""></li>
+			<li><img src="images/g10.jpg" alt=""></li>
+		</ul>
+	</div>
+	<div id="footer"></div>
+</body>
+</html>
