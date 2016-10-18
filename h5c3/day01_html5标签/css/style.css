@@ -27,11 +27,10 @@ ul{padding:0;margin:0;list-style:none;}
 .play-model span.active{color:#f60;}
 
 .list{max-height:300px;overflow-y:auto;border:1px solid #ddd;}
-.list li{border-bottom:1px dotted #ddd;line-height:2;}
-.list li a{display:block;color:#333;text-decoration:none;}
+.list li{border-bottom:1px dotted #ddd;line-height:2;color:#333;}
 .list li:hover{background-color: #efefef;}
 .list li:last-child{border:none;}
-.list li.active a{color:#f60;}
+.list li.active{color:#f60;}
 
 @keyframes rotatePic {
 	0%{transform:rotate(0deg);}
