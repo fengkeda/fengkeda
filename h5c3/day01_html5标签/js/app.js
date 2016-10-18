@@ -18,6 +18,7 @@
 			不管事件冒泡到哪个阶段，事件源对象都不会改变
 			获取事件源对象：e.target
 		7）tagName：获取元素标签名，返回大写字母
+		8）scrollIntoView()：把当前元素滚动到可见区域
 
  */
 document.addEventListener('DOMContentLoaded',function(){
@@ -30,14 +31,17 @@ document.addEventListener('DOMContentLoaded',function(){
 	var btnVolume = ePlayer.querySelector('#btnVolume');
 	var eTitle = ePlayer.querySelector('h1.title');
 	var eProgress = ePlayer.querySelector('progress');
+	var eModel = ePlayer.querySelector('.play-model');
 
 	// 获取下一个/上一个元素节点
 	// nextElementSibling/previousElementSibling
+	var eAlbum = btnPlay.previousElementSibling;
 	var eTime = eProgress.nextElementSibling;
 
 	// 全局变量
 	var playlist = [];
 	var index = 0;
+	var model = 2;//0:单曲播放,1:单曲循环,2:列表播放,3:列表循环,4:随机播放
 
 	var player = new Audio();
 
@@ -113,6 +117,7 @@ document.addEventListener('DOMContentLoaded',function(){
 		player.currentTime = (e.offsetX/this.offsetWidth)*player.duration;
 	}
 
+
 	// 播放时触发
 	player.onplay = function(){
 		btnPlay.classList.add('icon-pause');
@@ -122,6 +127,7 @@ document.addEventListener('DOMContentLoaded',function(){
 		for(var i=0;i<li.length;i++){
 			if(i===index){
 				li[i].classList.add('active');
+				li[i].scrollIntoView();
 			}else{
 				li[i].classList.remove('active');
 			}
@@ -130,6 +136,9 @@ document.addEventListener('DOMContentLoaded',function(){
 
 		// 改变标题
 		eTitle.innerHTML = playlist[index].singer + ' - ' + playlist[index].name;
+
+		// 专辑图片
+		eAlbum.src = playlist[index].album;
 	}
 
 	// 暂停时触发
@@ -140,21 +149,12 @@ document.addEventListener('DOMContentLoaded',function(){
 	// 播放进度改变时触发
 	// 播放过程一直触发
 	player.ontimeupdate = function(){
-		console.log(player.duration,player.currentTime);
+		updateTime();
+	}
 
-		// 时间
-		// 剩余总时间
-		var leftTime = player.duration - player.currentTime;
-
-		// 剩余多少分
-		var minLeft = parseInt(leftTime/60);
-		var secLeft = parseInt(leftTime%60);
-
-		eTime.innerHTML = '-' + minLeft + ':' + (secLeft<10 ? '0' : '') + secLeft;
-
-
-		// 进度条
-		eProgress.value = player.currentTime/player.duration*100
+	// 歌曲能播放时
+	player.oncanplay = function(){
+		init();
 	}
 
 
@@ -170,6 +170,44 @@ document.addEventListener('DOMContentLoaded',function(){
 
 	// 8）播放模式
 	// 当前歌曲播放完毕后，下一步做什么
+	player.onended = function(){
+		// 判断播放模式
+		// 0:单曲播放,1:单曲循环,2:列表播放,3:列表循环,4:随机播放
+		switch(model){
+			case 1:
+				play();
+				break;
+			case 2:
+				if(index<playlist.length-1){
+					index++;
+					play();
+				}
+				break;
+			case 3:
+				index++;
+				play();
+				break;
+			case 4:
+				index = Math.round(Math.random()*playlist.length);
+				play();
+				break;
+		}
+	}
+	
+	// 点击改变播放模式
+	eModel.onclick = function(e){
+		// 判断是否点击了模式按钮
+		if(e.target.classList.contains('iconfont')){
+			model = parseInt(e.target.dataset.model);
+		}
+
+		// 高亮显示播放模式
+		var eModels = eModel.children;
+		for(var i=0;i<eModels.length;i++){
+			eModels[i].classList.remove('active');
+		}
+		e.target.classList.add('active');
+	}
 
 	/**
 	 * [封装播放方法]
@@ -184,5 +222,44 @@ document.addEventListener('DOMContentLoaded',function(){
 		player.src = playlist[index].src;
 		player.play();
 	}
+
+	// 初始化
+	// 改变播放器的初始状态
+	// 歌名，图片，播放模式，时间
+	function init(){
+		// 改变标题
+		eTitle.innerHTML = playlist[index].singer + ' - ' + playlist[index].name;
+
+		// 专辑图片
+		eAlbum.src = playlist[index].album;
+
+		// 播放模式
+		for(var i=0;i<eModel.children.length;i++){
+			if(eModel.children[i].dataset.model == model){
+				eModel.children[i].classList.add('active');
+			}
+		}
+
+		// 更新时间
+		updateTime();
+		
+	}
+
+	function updateTime(){
+		// 时间
+		// 剩余总时间
+		var leftTime = player.duration - player.currentTime;
+
+		// 剩余多少分
+		var minLeft = parseInt(leftTime/60);
+		var secLeft = parseInt(leftTime%60);
+
+		eTime.innerHTML = '-' + minLeft + ':' + (secLeft<10 ? '0' : '') + secLeft;
+
+
+		// 进度条
+		eProgress.value = player.currentTime/player.duration*100
+	}
+
 
 })
