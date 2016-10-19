@@ -1355,6 +1355,7 @@ IE专用字体，【IE4+】；</li>
 </ul>
 <h3 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>其他新增样式</h3>
 <h4 id="1_1"><a name="user-content-1_1" href="#1_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. 背景</h4>
+<blockquote></blockquote>
 <ul>
 <li>background-size:<ul>
 <li>length： 用长度值指定背景图像大小。不允许负值</li>
@@ -1365,18 +1366,24 @@ IE专用字体，【IE4+】；</li>
 </ul>
 </li>
 <li>background-origin<ul>
-<li>padding-box： 从padding区域（含padding）开始显示背景图像。 </li>
+<li>padding-box(默认)： 从padding区域（含padding）开始显示背景图像。 </li>
 <li>border-box： 从border区域（含border）开始显示背景图像。 </li>
 <li>content-box： 从content区域开始显示背景图像。 </li>
 </ul>
 </li>
 <li>background-clip<ul>
 <li>padding-box： 从padding区域（不含padding）开始向外裁剪背景。 </li>
-<li>border-box： 从border区域（不含border）开始向外裁剪背景。 </li>
+<li>border-box(默认)： 从border区域（不含border）开始向外裁剪背景。 </li>
 <li>content-box： 从content区域开始向外裁剪背景。 </li>
-<li>text： 从前景内容的形状（比如文字）作为裁剪区域向外裁剪，如此即可实现使用背景作为填充色之类的遮罩效果    </li>
+<li>text： 从前景内容的形状（比如文字）作为裁剪区域向外裁剪，如此即可实现使用背景作为填充色之类的遮罩效果   </li>
 </ul>
 </li>
+<li>多背景<br />
+<pre><code>//注意，background-color只能设置一次，且由于写在前面的背景会叠在之后的背景之上，所以背景色通常都定义在最后一组上，避免背景色将图像盖住。
+background:url(test1.jpg) no-repeat scroll 10px 20px/50px 60px content-box padding-box,
+       url(test2.jpg) no-repeat scroll 10px 20px/70px 90px content-box padding-box,
+       url(test3.jpg) no-repeat scroll 10px 20px/110px 130px content-box padding-box #aaa;
+</code></pre></li>
 </ul>
 <h4 id="2"><a name="user-content-2" href="#2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. 边框</h4>
 <ul>
@@ -1387,11 +1394,13 @@ IE专用字体，【IE4+】；</li>
 </blockquote>
 <ul>
 <li>border-image-source： 设置或检索对象的边框是否用图像定义样式或图像来源路径。 </li>
-<li>border-image-slice： 设置或检索对象的边框背景图的分割方式。 </li>
-<li>border-image-width： 设置或检索对象的边框厚度。 </li>
-<li>border-image-outset： 设置或检索对象的边框背景图的扩展。 </li>
-<li>border-image-repeat： 设置或检索对象的边框图像的平铺方式。<ul>
-<li>stretch： 指定用拉伸方式来填充边框背景图。 </li>
+<li>border-image-slice： 设置对象的边框背景图的分割方式。 <br />
+该属性指定从上，右，下，左方位来分隔图像(不需要家单位)，将图像分成4个角，4条边和中间区域共9份，中间区域始终是透明的（即没图像填充），除非加上关键字 fill</li>
+<li>border-image-width： 设置对象的边框厚度。 </li>
+<li>border-image-outset： 设置对象的边框背景图的扩展。<br />
+该属性用于指定边框图像向外扩展所定义的数值，即如果值为10px，则图像在原本的基础上往外延展10px再显示。</li>
+<li>border-image-repeat： 设置对象的边框图像的平铺方式。<ul>
+<li>stretch(默认)： 指定用拉伸方式来填充边框背景图。 </li>
 <li>repeat： 指定用平铺方式来填充边框背景图。当图片碰到边界时，如果超过则被截断。 </li>
 <li>round： 指定用平铺方式来填充边框背景图。图片会根据边框的尺寸动态调整图片的大小直至正好可以铺满整个边框。写本文档时仅Firefox能看到该效果 </li>
 <li>space： 指定用平铺方式来填充边框背景图。图片会根据边框的尺寸动态调整图片的之间的间距直至正好可以铺满整个边框。 </li>
