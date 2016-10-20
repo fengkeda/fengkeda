@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{width: 192px;
+			margin: 0 auto;
+			    height:96px ;
+			    background: #eee;
+			    border-radius:100%;
+			    border-bottom: 100px solid red;
+			    border-top: 4px solid red;
+			    border-right: 4px solid red;
+			    border-left: 4px solid red;
+			    position: relative;
+			    }
+			.box::before{
+				content: "";
+				width: 30px;
+				height: 30px;
+				background: #eee;
+				position: absolute;
+				border:33px solid red ;
+				background: #eee;
+				top: 50px;
+				border-radius: 100%;
+				
+			}
+			.box::after{
+				content: "";
+			    width: 30px;
+				height: 30px;
+				background: #eee;
+				background: red;
+				position: absolute;
+				border:33px solid #eee ;
+				top: 50px;
+				right: 0;
+				border-radius: 100%;
+				
+			}
+			
+			.box2{width: 0px;height: 0px;border: 100px solid red;border-radius: 100%;border-right: 100px solid #fff;position: relative;}
+		    .box2::after{content: '';width: 20px;height: 20px;background: red;position: absolute;border-radius: 100%;top:-10px;left: 30px;}
+		    .box2::before{content: '';width: 20px;height: 20px;background: red;position: absolute;border-radius: 100%;top:-10px;left: 70px;}
+		</style>
+	</head>
+
+	<body>
+		<div class="box"></div>
+		
+		<br>
+		<div class="box2"></div>
+	</body>
+
+</html>

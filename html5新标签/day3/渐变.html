@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{width: 200px;height: 200px;border-radius: 10px;border: 1px solid black;
+			background:-moz-linear-gradient(45deg,red,#cc0,black);
+			background:-ms-linear-gradient(45deg,red,#cc0,black);
+			background:-webkit-linear-gradient(45deg,red,#cc0,black);
+			}
+			.box2{width: 200px;height: 200px;border-radius: 100%;border: 1px solid black;margin-top: 20px;
+			/*background:-webkit-radial-gradient(center,circle,#cc0,red,green,yellow,#fff)*/
+			/*老式写法：*/
+            /*background-image:-webkit-radial-gradient(50% 0,circle closest-corner, #f00,#ff0,#080);*/
+               
+            /*标准写法*/
+            background-image:radial-gradient(circle closest-corner at 50% 50%, red, blue)
+}           button{border-radius:10px;width: 50px;height: 30px;border: none;background-image:linear-gradient(to bottom,red,#cc0)}
+		    .btn:nth-child(1){
+		    	text-align: center;line-height: 30px;
+		    	  border-image:url(../images/btn_bg.png) 18 18 33 18 fill/18px 18px 33px 18px;
+                  /* box-shadow:10px 10px 10px rgba(0,0,0,.5);*/
+		    	display:block;width: 200px;height: 50px;
+		    	 box-sizing: border-box;}
+		           
+		</style>
+	</head>
+	<body>
+		<!--<div class="box"></div>
+	    <div class="box2">-->
+	    <!--<button class="btn1"></button>
+	    <button class="btn2"></button>
+	    <button class="btn3"></button>
+	    <button class="btn4"></button>
+	    <button class="btn5"></button>-->
+	    <span class="btn">按钮</span>
+	      <!--<span class="btn">按钮</span>
+	        <span class="btn">按钮</span>
+	          <span class="btn">按钮</span>
+		-->
+	</div>	
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{animation: dong 2s linear infinite;
+				transform: perspective(2000px) rotateX(60deg) rotateY(0deg);transform-style:preserve-3d ;
+				width:400px;height: 400px;position: relative;margin: 200px auto;}
+			.box div{opacity:0.6;width:400px;height: 400px;position: absolute;text-align: center;line-height: 400px;color: #fff;font-size: 64px;}
+			.box1{background: #6495ED;}
+			.box2{background:blue;}
+			.box3{background:yellow;}
+			.box4{background: green;}
+			.box5{background: deeppink;}
+			.box6{background:red;}
+			
+			/*@-webkit-keyframes dong{
+				from{transform: rotateX(0deg) rotateY(0deg);}
+				to{transform: rotateX(360deg) rotateY(360deg);}
+			}*/
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				
+				var obox = document.querySelector('.box');
+				var odiv = obox.querySelectorAll('div');
+				
+				for(var i = 0;i<odiv.length-2;i++){
+					var deg = 360/(odiv.length-2);
+				    var odeg = deg/2*Math.PI/180;
+					var x = 200/Math.tan(odeg);
+				    odiv[i].style.transform = "rotateY("+i*deg+"deg) translateZ("+x+"px)" ;	
+				     odiv[4].style.transform = "rotateX("+deg+"deg) translateZ("+-x+"px)" ;
+				     odiv[5].style.transform = "rotateX("+deg+"deg) translateZ("+x+"px)" ;	
+					
+				}
+				
+				var x = 60;
+				var y = 0;
+				document.onmousedown = function(e){
+					var starX = e.clientX;
+					var starY = e.clientY;
+					
+					document.onmousemove = function(evt){
+						var endX = evt.clientX;
+						var endY = evt.clientY;
+						
+						x -= (endY - starY)*0.3;
+						y += (endX - starX)*0.2;
+						
+					obox.style.transform = 'perspective(2000px) rotateX('+x+'deg) rotateY('+y+'deg)';
+					
+					evt.preventDefault();
+					
+					starX = endX;
+					starY = endY;
+						
+					}
+					
+					e.preventDefault();
+				}
+				document.onmouseup = function(){
+					document.onmousemove = null;
+				}
+				
+				
+				
+				
+				
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<div class="box1">1</div>
+			<div class="box2">2</div>
+			<div class="box3">3</div>
+			<div class="box4">4</div>
+			<div class="box5">5</div>
+			<div class="box6">6</div>
+		</div>
+	</body>
+</html>

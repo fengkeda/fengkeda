@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>天气预报</title>
+	<style>
+		body{font-family:'微软雅黑';}
+		ul{list-style: none;padding:0;margin:0;}
+		#weather{border:1px solid #ddd;padding:10px;font-size:12px;}
+		#weather ul{padding:5px;overflow:hidden;}
+		#weather li{float:left;padding:5px;width:143px;height:200px;border-right:1px dotted #ddd;}
+		#weather li.last{border-right:none;float:right;}
+		#weather .date{padding-bottom:10px;margin-bottom:10px;text-align:center;font-weight:bold;border-bottom:1px dotted #ddd;}
+		
+		.type{height:70px;}
+		/*晴天*/
+		.qt{background:url(tianqi/1.png) no-repeat center;}
+
+		/*阵雨*/
+		.zhenyu{background:url(tianqi/10.png) no-repeat center;}
+
+		/*多云*/
+		.duoyun{background:url(tianqi/3.png) no-repeat center;}
+
+		/*暴雨，大雨，中雨，小雨，雷雨*/
+		.by{background:url(tianqi/12.png) no-repeat center;}
+		.dayu{background: url(tianqi/11.png) no-repeat center;}
+		.zy{background:url(tianqi/10.png) no-repeat center;}
+		.xy{background:url(tianqi/9.png) no-repeat center;}
+		.leiyu{background: url(tianqi/16.png) no-repeat center;}
+	</style>
+	<script src="js/jquery-1.12.0.js"></script>
+	<script>
+		$(function(){
+			var $weather = $('#weather');
+
+			var _type = {
+				'晴':'qt',
+				'阵雨':'zhenyu',
+				'多云':'duoyun',
+				'暴雨':'by',
+				'大雨':'dayu',
+				'中雨':'zy',
+				'小雨':'xy',
+				'雷雨':'leiyu',
+			}
+			$.ajaxSetup({
+				url:'http://wthrcdn.etouch.cn/weather_mini',
+				dataType:'jsonp',
+				success:function(res){
+					console.log(res);
+
+					if(res.status !== 1000){
+						alert('很遗憾，中国还没占领这个城市');
+						return;
+					}
+
+					// 先清空内容
+					$weather.empty();
+
+					$('<h2/>').html(res.data.city).appendTo($weather);
+					$('<p/>').html(res.data.ganmao).appendTo($weather);
+
+					// 遍历5天的天气
+					var $ul = $('<ul/>');
+					$.each(res.data.forecast,function(idx,item){
+						var $li = $('<li/>');
+
+						$('<h4/>').addClass('date').html(item.date).appendTo($li);
+						$('<div/>').addClass('type ' + _type[item.type]).html(item.type).appendTo($li);
+						$('<p/>').html(item.high + '/' + item.low).appendTo($li);
+
+						$li.appendTo($ul);
+					});
+
+					$ul.appendTo($weather);
+				}
+			});
+
+			$.ajax({
+				data:{city:'广州'}
+			});
+
+			// 根据输入城市获取天气
+			var $city = $('#city')
+			var $btn = $city.next('button');
+			$btn.on('click',function(){
+				var _city = $city.val();
+
+				$.ajax({
+					data:{city:_city}
+				})
+			})
+		})
+	</script>
+</head>
+<body>
+	<input type="text" id="city"><button>获取天气</button>
+	<div id="weather"></div>
+</body>
+</html>

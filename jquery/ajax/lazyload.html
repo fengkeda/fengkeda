@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>懒加载效果</title>
+	<style>
+		body{font:14px '微软雅黑';}
+		.datalist ul{margin:0;padding:0;list-style: none;}
+		.datalist li{float:left;margin:10px;padding:10px;width:180px;height:350px;border:1px solid #ddd;}
+		.datalist li img{width:180px;}
+		.datalist li .price span{margin-right:10px;color:#f00;}
+	</style>
+	<script src="js/jquery-1.12.0.js"></script>
+	<script>
+		/*
+			number.toFixed(2) : 保持2位小数，自动四舍五入
+		 */
+		$(function(){
+			var $datalist = $('.datalist');
+			var $ul = $('<ul/>');
+			$.ajaxSetup({
+				url:'data/goodslist.json',
+				success:function(res){
+					console.log(res);
+
+					// 生成一个ul
+					$.each(res,function(idx,item){
+						var $li = $('<li/>');
+						$('<a/>').attr({href:item.url}).html('<img src="'+item.imgurl+'"/>').appendTo($li);
+						$('<p/>').addClass('title').html(item.title).appendTo($li);
+
+						// 计算折扣后的价格
+						var price = (item.price*item.off).toFixed(2)
+						$('<p/>').addClass('price').html( '<span>&yen;' + price + '</span><del>&yen;'+item.price.toFixed(2) + '</del>').appendTo($li);
+
+						$li.appendTo($ul);
+					});
+
+					$datalist.append($ul);
+				}
+			});
+
+			$.ajax();
+
+			// 懒加载效果
+			// 给window绑定scroll事件，当差不多滚动到底部是加载更多内容
+			$(window).on('scroll',function(){
+				// 获取滚动条滚动过的距离
+				var scrollTop = $(window).scrollTop();
+
+				// 当差不多滚动到底部是加载更多内容
+				if(scrollTop >= $(document).height() - $(window).height() - 100){
+					$.ajax();
+				}
+			})
+
+		})
+	</script>
+</head>
+<body>
+	<div class="datalist">
+		<!-- <ul>
+			<li><a href=""><img src="images/g1.jpg" alt=""></a><p class="title">国庆大优惠，只要998</p></li>
+			<li><a href=""><img src="images/g2.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/g3.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/g4.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/g5.jpg" alt=""></a></li>
+		</ul> -->
+	</div>
+</body>
+</html>

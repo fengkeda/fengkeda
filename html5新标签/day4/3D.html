@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				border: 1px solid black;margin: 0 auto;
+				top: 200px;position: relative;width: 200px;height:300px;transform-style:preserve-3d ;
+			     transform: perspective(2000px) rotateX(45deg);
+			     }
+			 img{width: 200px;position: absolute;height: 300px;}
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				var oimg = document.querySelectorAll('img');
+				var obox = document.querySelector('.box');
+				var deg = 360/oimg.length;
+				for(var i = 0;i<oimg.length;i++){
+					
+					var odeg = deg/2*Math.PI/180;
+					var x = 100/Math.tan(odeg);
+				
+				oimg[i].style.transform = "rotateY("+i*deg+"deg) translateZ("+x+20+"px)" ;
+				}
+				
+				var ox = 45;
+				var oy = 0;
+				document.onmousedown = function(e){
+					var startX = e.clientX;
+					var startY = e.clientY;
+					
+					document.onmousemove = function(evt){
+						var endX = evt.clientX;
+						var endY = evt.clientY;
+						
+						 ox -= (endY - startY)*0.3;
+						 oy += (endX - startX)*0.2;
+						 console.log(ox,oy);
+						//改变obox 的 transform属性
+						obox.style.transform = 'perspective(1600px) rotateX('+ox+'deg) rotateY('+oy+'deg)';
+						
+						evt.preventDefault();
+						// 更新start值
+						startX = endX;
+					    startY = endY;
+						
+					}
+					
+					e.preventDefault();
+				
+				
+				}
+				document.onmouseup = function(){
+					
+					document.onmousemove = null;
+				}
+			})
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<img src="../images/yy_1.jpg" alt="" />
+			<img src="../images/yy_2.png" alt="" />
+			<img src="../images/yy_3.jpg" alt="" />
+			<img src="../images/yy_4.png" alt="" />
+			<img src="../images/yy_5.jpg" alt="" />
+			<img src="../images/yy_6.jpg" alt="" />
+			<img src="../images/yy_7.jpg" alt="" />
+			<img src="../images/yy_1.jpg" alt="" />
+			<img src="../images/yy_2.png" alt="" />
+			<img src="../images/yy_3.jpg" alt="" />
+		</div>
+	</body>
+</html>

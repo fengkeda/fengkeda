@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+
+		<title>验证</title>
+		<style>
+		#box{position:absolute;width:100px;height:100px;background-color: #f00;}
+		</style>
+		<script src="js/jquery-1.12.0.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				// var obj = {}
+				// obj.name = 'xx';
+				// obj.getName = function(){}
+				// 属性：表示这个对象有什么
+				// 方法：表这个对象能做什么
+			
+				// 构造函数
+				// function jQuery(){
+
+				// }
+
+				// 得到原型对象
+				jQuery.prototype.tuoz = function(){
+					var self = this;
+					console.log('我的第一个插件');
+
+					// 关键：这里的this就是实例
+					self.on('mousedown',function(e){
+						var oleft = e.offsetX;
+						var otop = e.offsetY;
+						
+						// 事件命名空间
+						// 格式：事件名.名称
+						$(document).on('mousemove.tuoz',function(evt){
+
+							// 移动过程不断改变#box的top,left值
+							self.css({
+								top:evt.clientY - otop,
+								left:evt.clientX - oleft
+							});
+						})
+					}).on('mouseup',function(){
+						$(document).off('mousemove.tuoz');
+					});
+				}
+
+
+				$('#box').tuoz();
+
+
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>

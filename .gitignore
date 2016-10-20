@@ -1,0 +1,7 @@
+/project/
+/share/
+media/
+
+*.zip
+*.mp3
+*.mp4

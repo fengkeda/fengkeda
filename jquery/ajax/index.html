@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<script>
+		// 创建一个xhr对象
+		var xhr = new XMLHttpRequest();
+
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState===4 && xhr.status===200){
+				var p = document.createElement('p');
+				p.innerHTML =  xhr.responseText;
+
+				document.body.appendChild(p);
+			}
+		}
+
+		// 建立与服务器的连接
+		// url:数据请求地址（接口API）application programing interface
+		// http://10.16.156.19:3000/
+		// http://localhost:3000/
+		xhr.open('get','/ajax/ajaxtest',true);
+
+		xhr.send(null);
+
+
+	</script>
+</head>
+<body>
+	<h2>ajax测试</h2>
+</body>
+</html>

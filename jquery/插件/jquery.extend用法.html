@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>$.extend()</title>
+	<script src="js/jquery-1.12.0.js"></script>
+	<script>
+		$(function(){
+			var obj1 = {name:'赵云',nickname:'赵四'}
+			var obj2 = {name:'赵子龙',age:26}
+
+			// 1、扩展一个对象
+			// 用obj2扩展obj1
+			// 1）obj1中的同名属性被覆盖
+			// 2）obj1中没有的属性被添加
+			// 3）obj1存在但obj2不存在的属性会保留
+			$.extend(obj1,obj2);//结果：{name: "赵子龙", nickname: "赵四", age: 26}
+
+
+			// 2、深度拷贝
+			var obj_a = {name:'赵云',nickname:'赵四',wife:{wife:'马云禄'}}
+			var obj_b = {name:'曹操',nickname:'老曹',wife:{big:'小乔',small:'貂蝉',middle:'马蓉'}}
+			var smy = $.extend(true,obj_a,obj_b,{name:'司马懿'});
+			console.log(smy);
+
+			// 3、扩展jquery全局函数
+			
+
+			// 4、复制一个对象
+			var o = {name:'刘备'}
+			// var guanyu = o;
+			var guanyu = $.extend({},o);
+			guanyu.name = '关羽';
+			console.log(o,guanyu);
+		})
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

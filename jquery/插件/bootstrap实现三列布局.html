@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>懒加载效果</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+	<style>
+	body{padding:50px;}
+	.btn span{color:#f00;font-size:100px;}
+	.col-md-4{border:1px solid #ddd;}
+	</style>
+	<script src="jquery-1.12.0.js"></script>
+	<script src="bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+	<!-- 把父级分成12格 -->
+	<div class="col-md-4">第1列</div>
+	<div class="col-md-4">第2列</div>
+	<div class="col-md-4">
+		<div class="row">
+			<div class="col-md-4">3-1</div>
+			<div class="col-md-4">3-2</div>
+			<div class="col-md-4">3-3</div>
+		</div>
+	</div>
+</body>
+</html>

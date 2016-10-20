@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				font-size: 12px;
+				font-family: "新宋体";
+			}
+			
+			.header {
+				width: 960px;
+				overflow: hidden;
+				position: relative;
+				margin: 0 auto;
+			}
+			
+			.bg_img {
+				width: 960px;
+				height: 145px;
+				background: url(images/banner.png) no-repeat center center;
+			}
+			
+			.logo {
+				position: absolute;
+				z-index: 999;
+				top: 52px;
+				left: 33px;
+			}
+			
+			.nav {
+				width: 960px;
+				height: 38px;
+				overflow: hidden;
+				margin:  0 auto;
+			}
+			
+			.nav_img {
+				width: 180px;
+				height: 38px;
+				float: left;
+			}
+			
+			.nav_list {
+				list-style: none;
+				height: 38px;
+				width: 780px;
+				float: right;
+				background: url(images/bg.png) repeat-x left -227px;
+			}
+			
+			.nav_list li {
+				float: left;
+				width: 100px;
+				text-align: center;
+				height: 38px;
+				line-height: 38px;
+				
+				display: block;
+			}
+			
+			#firstli {
+				width: 70px;
+			}
+			
+			.main {
+				width: 960px;
+				/*overflow: hidden;*/
+				padding-top: 20px;
+				margin: 0 auto;
+			}
+			
+			.main_left {
+				width: 260px;
+				padding: 0 10px 20px 10px;
+				border: 2px solid lightgray;
+				float: left;
+			}
+			
+			.main_left .p1 {
+				line-height: 30px;
+			}
+			ul,li{list-style: none;}
+			.main_left span {
+				color: #666;
+			}
+			.mian_right{width: 200px;float: right;}
+			.mian_right li {
+				margin-top: 20px;
+				width: 190px;
+				background: rgb(242, 242, 242);
+				text-align: center;
+				margin-left: 10px;
+				height: 40px;
+				line-height: 40px;
+				color: #666;
+				font-weight: bold;
+				border: 1px solid darkgrey;
+				border-radius: 10px;
+			}{}
+			.main_center {
+				width: 433px;
+				padding: 10px 20px 20px 20px;
+				float: left;
+			}
+			
+			.main_center .p2 {
+				line-height: 24px;
+				margin-top: 20px;
+				margin-bottom: 30px;
+			}
+			
+			.main_list li {
+				margin-top: 15pxf;
+			}
+			.main_left aside{margin-top: 30px;}
+			.main_left aside li{font-size: 12px;color:black;margin-top: 10px;}
+			
+			.main_center footer {
+				width: 430px;
+				margin: 0 auto;
+				margin-top: 20px;
+			}
+			
+			.main_center footer p {
+				margin-top: 15px;
+			}
+			
+			.main_center footer li {
+				margin-top: 10px;
+				list-style-type: disc;
+				font-size: 12px;
+			}
+			
+			.main_center footer li time {
+				float: right;
+				color: rgb(142, 142, 142);
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- 页面头部 -->
+		<header class="header">
+			<div class="bg_img"></div>
+			<div class="logo"><img src="images/logo.png" /></div>
+		</header>
+		<!-- 页面主导航 -->
+		<nav class="nav">
+			<div class="nav_img"><img src="images/bg_date.png" /></div>
+			<aside>
+				<ul class="nav_list">
+					<li id="firstli">首页</li>
+					<li>新闻动态</li>
+					<li>关于马前卒</li>
+					<li>服务项目</li>
+					<li>成功案例</li>
+					<li>会员中心</li>
+					<li>事务论坛</li>
+					<li>关于我们</li>
+
+				</ul>
+			</aside>
+		</nav>
+
+		<section class="main">
+			<article class="main_left">
+				<aside>
+				
+					<h3>本站公告</h3><span>Announcement</span>
+				
+				<p class="p1">马前卒北京办事服务指南网，是由北京和事宜商务咨询公司建立的网站，为北京以外的政府机关、企事业单位、个人在北京办事提供帮助和服务，目的是为客户节省开支、节省人力、提高效率、方便便捷完成在北京需要办理的各项事务。</p>
+				</aside>
+				<aside>
+					<hgroup>
+					<h4>联系方式</h4>
+					<h5>Contact Us</h5>
+					</hgroup>
+					<ul>
+						<li class="one">联系人：周先生</li>
+						<li>联系电话：010-80371229</li>
+						<li>手机：13126632900</li>
+						<li>传真：010-80371229</li>
+						<li class="four">Email:xxx@bjmaz.com</li>
+						<li>QQ号：123488446</li>
+						<li>MSN 号：xxx@hotmail.com</li>
+					</ul>
+				</aside>
+			</article>
+			<article class="main_center">
+				<aside>
+				<hgroup>
+				<h3><span style="font-weight: normal;">About</span>关于我们</h3>
+				</hgroup>
+				<p class="p2">马前卒北京办事服务指南网，是由北京和事宜商务咨询公司建立的网站，为北京以外的政府机关、企事业单位、个人在北京办事提供帮助和服务，目的是为客户节省开支、节省人力、提高效率、方便便捷完成在北京需要办理的各项事务。 马前卒秉承“三益”的服务经营理念，一益客户：为客户排忧解难、节省开支、提高效率、方便便捷；二益国家：依法纳税，国富民强；三益企业：做好服务，求得发展。
+					<a href="#">查看详情</a>
+				</p>
+				<img src="images/banner_ad.png" />
+				</aside>
+				<aside>
+					<h4>News.新闻动态</h4>
+					<ul>
+						<li>服务区域限北京五环内，含过路费、停车费<time>2010-05-15</time></li>
+						<li>超出北京五环外，每公里另收1.5元及过路费<time>2010-05-15</time></li>
+						<li>服务区域限北京五环内，含过路费、停车费<time>2010-05-15</time></li>
+						<li>超出北京五环外，每公里另收1.5元及过路费<time>2010-05-15</time></li>
+						<li>服务区域限北京五环内，含过路费、停车费<time>2010-05-15</time></li>
+					</ul>
+				</aside>
+			</article>
+			<article class="mian_right">
+				<aside>
+				<hgroup>
+				<h3>单位服务项目</h3>
+				<h3 class="en">Business services</h3>
+				</hgroup>
+				<ul class="main_list">
+					<li>行政报告</li>
+					<li>行政报告</li>
+					<li>行政报告</li>
+					<li>行政报告</li>
+					<li>行政报告</li>
+					<li>行政报告</li>
+					<li>行政报告</li>
+					<li>行政报告</li>
+				</ul>
+				</aside>
+			</article>
+		</section>
+
+	</body>
+
+</html>
