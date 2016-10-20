@@ -1016,150 +1016,63 @@ body .markdown-body
 }
 </style><title>README</title></head><body><article class="markdown-body"><div class="toc">
 <ul>
-<li><a href="#css3">CSS3变形与过渡</a><ul>
-<li><a href="#css3transform">CSS3变形transform</a><ul>
-<li><a href="#1-2d">1. 2D变换</a></li>
-<li><a href="#2-3d">2. 3D变换</a></li>
+<li><a href="#css3">CSS3动画</a><ul>
+<li><a href="#animation">关键帧动画animation</a><ul>
+<li><a href="#_1">定义动画</a></li>
+<li><a href="#_2">使用动画</a></li>
 </ul>
 </li>
-<li><a href="#transform-originxy">transform-origin(x,y)</a></li>
-<li><a href="#css3transition">css3过渡transition</a></li>
-<li><a href="#_1">各大浏览器兼容写法</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<h1 id="css3"><a name="user-content-css3" href="#css3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CSS3变形与过渡</h1>
-<h3 id="css3transform"><a name="user-content-css3transform" href="#css3transform" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CSS3变形transform</h3>
-<h4 id="1-2d"><a name="user-content-1-2d" href="#1-2d" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. 2D变换</h4>
+<h1 id="css3"><a name="user-content-css3" href="#css3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CSS3动画</h1>
+<h3 id="animation"><a name="user-content-animation" href="#animation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>关键帧动画animation</h3>
+<h4 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>定义动画</h4>
+<p><pre><code>@keyframes &lt;identifier&gt; '{' &lt;keyframes-blocks&gt; '}';
+&lt;keyframes-blocks&gt;：[ [ from | to | &lt;percentage&gt; ]{ sRules } ] [ [ , from | to | &lt;percentage&gt; ]{ sRules } ]*
+
+</code></pre><br />
+指定动画名称和动画效果。 <br />
+@keyframes定义的动画名称用来被animation-name所使用。 <br />
+定义动画时，简单的动画可以直接使用关键字from和to，即从一种状态过渡到另一种状态<br />
+<pre><code>@keyframes testanimations{
+    from{opacity:1;}
+    to{opacity:0;}
+}
+</code></pre></p>
+<h4 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>使用动画</h4>
+<pre><code>//完整格式：
+animation：name duration timing-function delay iteration-count direction
+
+</code></pre>
+
 <ul>
-<li>
-<p>了解坐标系<br />
-<img alt="坐标系" src="///F://mydoc/kphone/xiejinrong/h5c3/day03_css3%E5%8F%98%E5%BD%A2/img/coord.png" title="利用坐标系理解transform" /></p>
-</li>
-<li>
-<p>translate(x,y)<br />
-根据给定的参数x,y，元素相对与其当前位置移动</p>
-<ul>
-<li>translateX(length)： 指定对象X轴（水平方向）的平移 </li>
-<li>translateY(length)： 指定对象Y轴（垂直方向）的平移 </li>
-<li>translateZ(length)： 指定对象Z轴的平移 </li>
+<li>animation-name： <br />
+设置对象所应用的动画名称，这里的名称为@keyframes中定义的名称</li>
+<li>animation-duration： <br />
+设置对象动画的持续时间，默认值为0，所以必须设定动画时间才会有动画效果</li>
+<li>animation-timing-function： <br />
+设置对象动画的过渡类型 <br />
+<code>同transition</code></li>
+<li>animation-delay：<br />
+设置对象动画延迟的时间（默认：0）</li>
+<li>animation-iteration-count：<br />
+设置对象动画的循环次数 <ul>
+<li>infinite： 无限循环 </li>
+<li>number： 指定对象动画的具体循环次数（默认：1）</li>
 </ul>
 </li>
-<li>
-<p>rotate(angle) <br />
-元素顺时针旋转给定的角度。允许负值，元素将逆时针旋转，需先有transform-origin属性的定义(<a href="#transform-originxy">查看详情</a>)。</p>
-<ul>
-<li>rotateX(angle)：</li>
-<li>rotateY(angle)</li>
-<li>rotateZ(angle)</li>
+<li>animation-direction：<br />
+设置对象动画在循环中是否反向运动 <ul>
+<li>normal(默认)： 正常方向 </li>
+<li>alternate： 正常与反向交替 </li>
 </ul>
 </li>
-<li>
-<p>scale(number,number)<br />
-元素的尺寸会增加或减少（2D缩放）。第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则默认取第一个参数的值</p>
-<ul>
-<li>scaleX(number)： 指定对象X轴的（水平方向）缩放 </li>
-<li>scaleY(number)： 指定对象Y轴的（垂直方向）缩放 </li>
-<li>scaleZ(number)： 指定对象Z轴的缩放 <br />
-<code>scale(2,4) //把宽度转换为原始尺寸的 2 倍，把高度转换为原始高度的 4 倍</code></li>
+<li>animation-play-state：<br />
+设置对象动画的状态。w3c正考虑是否将该属性移除，因为动画的状态可以通过其它的方式实现，比如重设样式 <ul>
+<li>running： 运动 </li>
+<li>paused： 暂停</li>
 </ul>
 </li>
-<li>
-<p>skew(angle,angle)<br />
-指定对象skew transformation（斜切扭曲）。第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则默认值为0 </p>
-<ul>
-<li>skewX(angle)： 指定对象X轴的（水平方向）扭曲 </li>
-<li>skewY(angle)： 指定对象Y轴的（垂直方向）扭曲</li>
-<li>skewZ(angle)： 指定对象Z轴的扭曲<br />
-<code>skew(30deg,20deg) 围绕 X 轴把元素翻转 30 度，围绕 Y 轴翻转 20 度</code></li>
-</ul>
-</li>
-<li>
-<p>matrix(a,b,c,d,e,f)<br />
-把所有 2D 转换方法组合在一起，实现旋转、缩放、移动以及倾斜元素。以一个含六值的(a,b,c,d,e,f)变换矩阵的形式指定一个2D变换，</p>
-</li>
-<li>变换矩阵：[a,b,c,d,e,f]<br />
-<img alt="matrix" src="///F://mydoc/kphone/xiejinrong/h5c3/day03_css3%E5%8F%98%E5%BD%A2/img/matrix.gif" title="matrix与skew,scale,rotate,translate的关系" /><br />
-无论是旋转还是拉伸什么的，本质上都是应用的matrix()方法实现的（修改matrix()方法固定几个值），只是类似于transform:rotate这种表现形式，我们更容易理解，记忆与上手。</li>
-</ul>
-<h4 id="2-3d"><a name="user-content-2-3d" href="#2-3d" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. 3D变换</h4>
-<ul>
-<li>理解三维坐标<br />
-如果说rotateX/rotateY/rotateZ可以帮助理解三维坐标，则translateZ则可以帮你理解透视位置</li>
-<li>
-<p>perspective(length): 为 3D 转换元素定义透视视图<br />
-中文意思是：透视，视角，在CSS中称为“透视点”，这个属性的存在与否决定了你所看到的是2次元的还是3次元的（是2D视图还是3D视图）,它指定了观察者与z=0平面的距离<br />
-<code>示例：.box{transform:perspective(300px) rotateY(90deg)}</code></p>
-</li>
-<li>
-<p>perspective： number|none;<br />
-属性定义 3D 元素距视图的距离，以像素计。该属性允许您改变 3D 元素查看 3D 元素的视图。当为元素定义 perspective 属性时，其子元素会获得透视效果，而不是元素本身。</p>
-</li>
-<li>
-<p>perspective-originn: x-axis y-axis;<br />
-perspective-origin 属性定义 3D 元素所基于的 X 轴和 Y 轴。该属性允许您改变 3D 元素的底部位置。当为元素定义 perspective-origin 属性时，其子元素会获得透视效果，而不是元素本身。</p>
-</li>
-<li>
-<p>transform-style<br />
-指定定嵌套元素是怎样在三维空间中呈现，使用此属性必须先使用transform 属性.</p>
-<ul>
-<li>flat    子元素将不保留其 3D 位置。</li>
-<li>preserve-3d 子元素将保留其 3D 位置</li>
-</ul>
-</li>
-<li>translate3d(x,y,z)</li>
-<li>scale3d(x,y,z)</li>
-<li>rotate3d(x,y,z,angle)</li>
-</ul>
-<h3 id="transform-originxy"><a name="user-content-transform-originxy" href="#transform-originxy" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>transform-origin(x,y)</h3>
-<blockquote>
-<p>以某个原点进行转换，该属性提供2个参数值：<br />
-1. 如果提供两个，第一个用于横坐标，第二个用于纵坐标。 <br />
-2. 如果只提供一个，该值将用于横坐标；纵坐标将默认为50%。 </p>
-</blockquote>
-<ul>
-<li>percentage： 用百分比指定坐标值。可以为负值。 </li>
-<li>length： 用长度值指定坐标值。可以为负值。 </li>
-<li>left： 指定原点的横坐标为left </li>
-<li>center①： 指定原点的横坐标为center </li>
-<li>right： 指定原点的横坐标为right </li>
-<li>top： 指定原点的纵坐标为top </li>
-<li>center②： 指定原点的纵坐标为center </li>
-<li>bottom： 指定原点的纵坐标为bottom </li>
-</ul>
-<h3 id="css3transition"><a name="user-content-css3transition" href="#css3transition" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>css3过渡transition</h3>
-<blockquote>
-<p>通过 CSS3，我们可以在不使用 Flash 动画或 JavaScript 的情况下，<br />
-当元素从一种样式变换为另一种样式时为元素添加效果</p>
-</blockquote>
-<p><em>要实现这一点，必须规定两项内容：</em><br />
-1. 规定您希望把效果添加到哪个 CSS 属性上<br />
-2. 规定效果的时长(如果时长未规定，则不会有过渡效果，因为默认值是0)<br />
-<code>transition:transform 3s</code></p>
-<p><strong>以上为简写，其中包含以下几个属性：</strong></p>
-<ul>
-<li>transition-property<br />
-规定应用过渡的 CSS 属性的名称，多个属性以逗号分隔</li>
-<li>transition-duration<br />
-定义过渡效果花费的时间。默认是 0</li>
-<li>transition-timing-function<br />
-    规定过渡效果的时间曲线。<ul>
-<li>linear： 线性过渡。 </li>
-<li>ease(默认)： 平滑过渡。 </li>
-<li>ease-in： 由慢到快。 </li>
-<li>ease-out： 由快到慢。 </li>
-<li>ease-in-out： 由慢到快再到慢。 </li>
-<li>cubic-bezier(number, number, number, number)： 特定的贝塞尔曲线类型，4个数值需在[0, 1]区间内</li>
-</ul>
-</li>
-<li>transition-delay<br />
-设置对象延迟过渡的时间。默认是0</li>
-</ul>
-<h3 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>各大浏览器兼容写法</h3>
-<pre><code>    Webkit(Chrome/Safari)   -webkit-transform
-    Gecko(Firefox)  -moz-transform
-    Presto(Opera)   -o-transform
-    Trident(IE) -ms-transform
-    W3C transform
-</code></pre></article></body></html>
+</ul></article></body></html>

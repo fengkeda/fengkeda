@@ -122,6 +122,10 @@ document.addEventListener('DOMContentLoaded',function(){
 	player.onplay = function(){
 		btnPlay.classList.add('icon-pause');
 
+		// 图片旋转效果
+		eAlbum.classList.add('playing');
+		eAlbum.style.animationPlayState = 'running';
+
 		// 给当前播放歌曲添加高亮效果
 		var li = eList.querySelectorAll('li');
 		for(var i=0;i<li.length;i++){
@@ -144,6 +148,10 @@ document.addEventListener('DOMContentLoaded',function(){
 	// 暂停时触发
 	player.onpause = function(){
 		btnPlay.classList.remove('icon-pause');
+
+		// 移除图片旋转效果
+		// eAlbum.classList.remove('playing');
+		eAlbum.style.animationPlayState = 'paused';
 	}
 
 	// 播放进度改变时触发
