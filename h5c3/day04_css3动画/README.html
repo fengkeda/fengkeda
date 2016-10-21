@@ -1018,8 +1018,8 @@ body .markdown-body
 <ul>
 <li><a href="#css3">CSS3动画</a><ul>
 <li><a href="#animation">关键帧动画animation</a><ul>
-<li><a href="#_1">定义动画</a></li>
-<li><a href="#_2">使用动画</a></li>
+<li><a href="#keyfrems">定义动画@keyfrems</a></li>
+<li><a href="#animation_1">使用动画animation</a></li>
 </ul>
 </li>
 </ul>
@@ -1028,33 +1028,43 @@ body .markdown-body
 </div>
 <h1 id="css3"><a name="user-content-css3" href="#css3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CSS3动画</h1>
 <h3 id="animation"><a name="user-content-animation" href="#animation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>关键帧动画animation</h3>
-<h4 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>定义动画</h4>
-<p><pre><code>@keyframes &lt;identifier&gt; '{' &lt;keyframes-blocks&gt; '}';
-&lt;keyframes-blocks&gt;：[ [ from | to | &lt;percentage&gt; ]{ sRules } ] [ [ , from | to | &lt;percentage&gt; ]{ sRules } ]*
-
-</code></pre><br />
-指定动画名称和动画效果。 <br />
-@keyframes定义的动画名称用来被animation-name所使用。 <br />
+<h4 id="keyfrems"><a name="user-content-keyfrems" href="#keyfrems" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>定义动画@keyfrems</h4>
+<p>指定动画名称和动画效果。格式如下：<br />
+<pre><code>@keyframes &lt;identifier&gt; {
+    from | to | &lt;percentage&gt;{ sRules }
+}
+</code></pre></p>
+<p>identifier为动画名称，被animation-name所使用。 <br />
 定义动画时，简单的动画可以直接使用关键字from和to，即从一种状态过渡到另一种状态<br />
 <pre><code>@keyframes testanimations{
     from{opacity:1;}
     to{opacity:0;}
 }
 </code></pre></p>
-<h4 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>使用动画</h4>
-<pre><code>//完整格式：
-animation：name duration timing-function delay iteration-count direction
-
-</code></pre>
-
+<p>PS：可以设置多组属性（多组from~to，用逗号分隔），多组属性动画会同时进行</p>
+<h4 id="animation_1"><a name="user-content-animation_1" href="#animation_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>使用动画animation</h4>
+<p>完整格式如下：<br />
+<pre><code>animation：&lt;name&gt; &lt;duration&gt; [timing-function] [delay] [iteration-count] [direction]
+</code></pre></p>
 <ul>
 <li>animation-name： <br />
-设置对象所应用的动画名称，这里的名称为@keyframes中定义的名称</li>
+设置对象所应用的动画名称，这里的名称为@keyframes中定义的名称（<a href="#keyfrems">查看</a>）</li>
 <li>animation-duration： <br />
 设置对象动画的持续时间，默认值为0，所以必须设定动画时间才会有动画效果</li>
 <li>animation-timing-function： <br />
 设置对象动画的过渡类型 <br />
-<code>同transition</code></li>
+<code>同transition中的timing-function</code><ul>
+<li>steps(nteger[,pos]) 设置间隔参数，可以实现分步过渡<ul>
+<li>第一个参数指定了时间函数中的间隔数量（必须是正整数）</li>
+<li>第二个参数可选，接受start和end两个值，指定在每个间隔的起点或是终点发生阶跃变化（默认为end）。</li>
+</ul>
+</li>
+<li>step-start<br />
+    等同于steps(1,start)动画当前帧到下一帧分成1步，动画执行时为开始左侧端点的部分为开始。</li>
+<li>step-end <br />
+    等同于steps(1,end)当前帧到下一帧分成1步，动画执行时以结尾端点为开始，默认值为 end。</li>
+</ul>
+</li>
 <li>animation-delay：<br />
 设置对象动画延迟的时间（默认：0）</li>
 <li>animation-iteration-count：<br />
@@ -1066,7 +1076,7 @@ animation：name duration timing-function delay iteration-count direction
 <li>animation-direction：<br />
 设置对象动画在循环中是否反向运动 <ul>
 <li>normal(默认)： 正常方向 </li>
-<li>alternate： 正常与反向交替 </li>
+<li>alternate： 正常与反向交替（iteration-count两次以上才能看到效果）</li>
 </ul>
 </li>
 <li>animation-play-state：<br />
