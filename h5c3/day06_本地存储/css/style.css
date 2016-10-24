@@ -14,5 +14,5 @@ footer nav a:hover{background-color: rgba(255,255,255,.1)}
 .container ul li{margin:10px;}
 
 .container img{
-	width:160px;
+	width:160px;height:160px;border:1px solid #ddd;
 }
