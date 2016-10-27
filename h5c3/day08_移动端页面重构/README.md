@@ -64,7 +64,7 @@ tap为模拟事件，zepto、jqueryMoblie、mui等插件封装了此事件
 * touch事件中的event对象属性
     - touches：表示当前跟踪的触摸操作的touch对象的数组。
     - targetTouches：特定于事件目标的Touch对象的数组。
-    - changeTouches：表示自上次触摸以来发生了什么改变的Touch对象的数组。
+    - changedTouches：表示自上次触摸以来发生了什么改变的Touch对象的数组。
     - 每个Touch对象包含的属性如下。
         + clientX：触摸目标在视口中的x坐标。
         + clientY：触摸目标在视口中的y坐标。
