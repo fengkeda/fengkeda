@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>03_侧滑菜单</title>
+	<style>
+		body{margin:0;}
+		ul{list-style: none;padding:0;margin:0;}
+		.sidebar{position:absolute;top:0;bottom:0;width:120px;background:#fff;transform:translateX(-120px);transition:all 0.5s;}
+		.sidebar li{padding:5px;border-bottom:1px dotted #ccc;}
+		.sidebar img{margin-right:5px;width:40px;height:40px;vertical-align: top}
+		.show{transform:translateX(0);box-shadow:0 5px 10px rgba(0,0,0,.2);}
+
+		.main h1{margin:0;padding:10px;font-size:20px;background-color: #387ef5;color:#fff;}
+		.main .content{padding:10px;}
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			var main = document.querySelector('.main');
+			var sidebar = document.querySelector('.sidebar');
+			var bigPic = document.querySelector('.bigPic');
+
+			var startX,endX;
+			main.addEventListener('touchstart',function(e){
+				console.log(e);
+				startX = e.changedTouches[0].pageX;
+			});
+
+			main.addEventListener('touchmove',function(e){
+				console.log(e);
+				endX = e.changedTouches[0].pageX;
+
+				disX = endX-startX;
+				if(disX > 0){
+
+					if(disX > 100){
+						sidebar.classList.add('show');
+					}
+				}else{
+					sidebar.classList.remove('show');
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<section class="main">
+		<h1>侧滑菜单</h1>
+		<div class="content">
+			<p>往右拖动，实现效果</p>
+			<img src="img/mm001.jpg" alt="" class="bigPic">
+		</div>
+	</section>
+	<nav class="sidebar">
+		<h4>请选择一位美女</h4>
+		<ul class="datalist">
+			<li><img src="img/mm001.jpg" alt="">美女1</li>
+			<li><img src="img/mm002.jpg" alt="">美女2</li>
+			<li><img src="img/mm003.jpg" alt="">美女3</li>
+			<li><img src="img/mm004.jpg" alt="">美女4</li>
+			<li><img src="img/mm005.jpg" alt="">美女5</li>
+			<li><img src="img/mm006.jpg" alt="">美女6</li>
+		</ul>
+	</nav>
+</body>
+</html>
