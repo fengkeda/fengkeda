@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			canvas{border: 1px solid #ddd;}
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				var canvas = document.querySelector('canvas');
+				
+				canvas.width =canvas.height = 600;
+				
+				var ctx = canvas.getContext('2d');
+				//头
+                ctx.arc(300,300,100,0,360*Math.PI/180,false);
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "#333";
+                ctx.stroke();
+                
+                ctx.beginPath();
+                ctx.moveTo(260,270);
+                ctx.lineTo(260,300);
+                ctx.moveTo(340,270);
+                ctx.lineTo(340,300);
+                ctx.lineWidth = 10;
+                ctx.strokeStyle = "crimson"
+                ctx.stroke();
+                
+                ctx.beginPath();
+                ctx.arc(300,280,80,40*Math.PI/180,140*Math.PI/180,false);
+                ctx.lineWidth = 4;
+                ctx.strokeStyle = "yellow"
+                ctx.stroke();
+				
+			})
+		</script>
+	</head>
+	
+	<body>
+		<canvas></canvas>
+	</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		body{background: #fff;}
+			.box{animation: dong 2s linear infinite;
+				transform: perspective(2000px) rotateX(60deg) rotateY(0deg);transform-style:preserve-3d ;
+				width:200px;height: 200px;position: relative;margin: 100px auto;}
+			.box div{position: relative;background:rgba(249,247,247,1);backface-visibility: hidden;
+			       /* border:1px solid #ddd;*/width:200px;height: 200px;position: absolute;
+		        	text-align: center;border-radius: 50px;
+		        	display: flex;flex-wrap: wrap;justify-content: center;align-items: center;}
+		    .box1 span{background: red;width: 60px;height: 60px;}   	
+			.box3 span:nth-child(1){align-self:flex-start ;margin-left: 10px;}
+			.box3 span:nth-child(2){align-self: center;margin: 0;}
+			.box3 span:nth-child(3){align-self: flex-end;margin-left: 10px;}
+			.box4 span{margin: 10px;background: red;}
+			.box5 span{margin: 10px 20px;}
+			.box5 span:nth-child(3){margin: 0 40px;}
+			.box6{align-content: space-around ;}
+			
+			span{margin:10px;display: block;border-radius:50%;width: 50px;height: 50px;background: blue;align-self: center;opacity: 1;}
+		
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				
+				var obox = document.querySelector('.box');
+				var odiv = obox.querySelectorAll('div');
+				
+				for(var i = 0;i<odiv.length-2;i++){
+					var deg = 360/(odiv.length-2);
+				    var odeg = deg/2*Math.PI/180;
+					var X = 100/Math.tan(odeg);
+				    odiv[i].style.transform = "rotateY("+i*deg+"deg) translateZ("+X+"px)" ;	
+				     odiv[4].style.transform = "rotateX("+-deg+"deg) translateZ("+X+"px)" ;
+				     odiv[5].style.transform = "rotateX("+deg+"deg) translateZ("+X+"px)" ;	
+					
+				}
+				
+				var x = 60;
+				var y = 0;
+				document.onmousedown = function(e){
+					var starX = e.clientX;
+					var starY = e.clientY;
+					
+					document.onmousemove = function(evt){
+						var endX = evt.clientX;
+						var endY = evt.clientY;
+						
+						x -= (endY - starY)*0.2;
+						y += (endX - starX)*0.2;
+						
+					obox.style.transform = 'perspective(2000px) rotateX('+x+'deg) rotateY('+y+'deg)';
+					
+					evt.preventDefault();
+					
+					starX = endX;
+					starY = endY;
+						
+					}
+					
+					e.preventDefault();
+				}
+				document.onmouseup = function(){
+					document.onmousemove = null;
+				}
+				
+				
+				
+				
+				
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<div class="box1"><span></span></div>
+			<div class="box2">
+				<span></span>
+				<span></span>
+			</div>
+			<div class="box3">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="box4">
+				<span></span><span></span><span></span><span></span>
+			</div>
+			<div class="box5">
+				<span></span><span></span><span></span><span></span><span></span>
+			</div>
+			<div class="box6">
+				<span></span><span></span><span></span><span></span><span></span><span></span>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			canvas{border: 1px solid #ddd;}
+		</style>
+		<script>
+			document.addEventListener("DOMContentLoaded",function(){
+				var canvas = document.querySelector("canvas");
+				
+				canvas.width = canvas.height = 600;
+				
+				var ctx = canvas.getContext("2d");
+				//画圆
+				ctx.arc(300,300,120,0,2*Math.PI);
+				ctx.stroke();
+				ctx.beginPath();
+				
+				//黄色
+				ctx.moveTo(300,300);
+				ctx.arc(300,300,120,30*Math.PI/180,120*Math.PI/180,false);
+				ctx.fillStyle = "yellow";
+				ctx.fill();
+				ctx.beginPath();
+				
+				ctx.moveTo(300,350);
+				ctx.lineTo(320,450);
+				ctx.lineTo(380,450);
+				ctx.strokeText("1000",340,460)
+				ctx.stroke();
+				ctx.beginPath();
+				
+				//红色
+				ctx.moveTo(300,300);
+				ctx.arc(300,300,120,120*Math.PI/180,280*Math.PI/180,false);
+				ctx.fillStyle = "red";
+				ctx.fill();
+				ctx.beginPath();
+				
+				ctx.moveTo(230,260);
+				ctx.lineTo(180,200);
+				ctx.lineTo(230,200);
+				ctx.strokeText("1200",200,190)
+				ctx.stroke();
+				ctx.beginPath();
+				
+				//橙色
+				ctx.moveTo(300,300);
+				ctx.arc(300,300,120,280*Math.PI/180,310*Math.PI/180,false);
+				ctx.fillStyle = "orangered";
+				ctx.fill();
+				ctx.beginPath();
+				
+				ctx.moveTo(330,230);
+				ctx.lineTo(350,170);
+				ctx.lineTo(390,170);
+				ctx.strokeText("200",370,160)
+				ctx.stroke();
+				ctx.beginPath();
+				
+				//青色
+				ctx.moveTo(300,300);
+				ctx.arc(300,300,120,310*Math.PI/180,340*Math.PI/180,false);
+				ctx.fillStyle = "#0f0";
+				ctx.fill();
+				ctx.beginPath();
+				
+				ctx.moveTo(350,270);
+				ctx.lineTo(430,200);
+				ctx.lineTo(480,200);
+				ctx.strokeText("260",450,190)
+				ctx.stroke();
+				ctx.beginPath();
+				
+				//蓝色
+				ctx.moveTo(300,300);
+				ctx.arc(300,300,120,340*Math.PI/180,390*Math.PI/180,false);
+				ctx.fillStyle = "blue";
+				ctx.fill();
+				ctx.beginPath();
+				
+				ctx.moveTo(400,290);
+				ctx.lineTo(460,280);
+				ctx.lineTo(520,280);
+				ctx.strokeText("600",500,270)
+				ctx.stroke();
+				ctx.beginPath();
+				
+			})
+		</script>
+	</head>
+	<body>
+		<canvas></canvas>
+	</body>
+</html>

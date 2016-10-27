@@ -15,10 +15,10 @@
 			.box5{background: deeppink;}
 			.box6{background:red;}
 			
-			/*@-webkit-keyframes dong{
+			@-webkit-keyframes dong{
 				from{transform: rotateX(0deg) rotateY(0deg);}
 				to{transform: rotateX(360deg) rotateY(360deg);}
-			}*/
+			}
 		</style>
 		<script>
 			document.addEventListener('DOMContentLoaded',function(){
@@ -29,10 +29,10 @@
 				for(var i = 0;i<odiv.length-2;i++){
 					var deg = 360/(odiv.length-2);
 				    var odeg = deg/2*Math.PI/180;
-					var x = 200/Math.tan(odeg);
-				    odiv[i].style.transform = "rotateY("+i*deg+"deg) translateZ("+x+"px)" ;	
-				     odiv[4].style.transform = "rotateX("+deg+"deg) translateZ("+-x+"px)" ;
-				     odiv[5].style.transform = "rotateX("+deg+"deg) translateZ("+x+"px)" ;	
+					var X = 200/Math.tan(odeg);
+				    odiv[i].style.transform = "rotateY("+i*deg+"deg) translateZ("+X+"px)" ;	
+				     odiv[4].style.transform = "rotateX("+deg+"deg) translateZ("+-X+"px)" ;
+				     odiv[5].style.transform = "rotateX("+deg+"deg) translateZ("+X+"px)" ;	
 					
 				}
 				
@@ -46,7 +46,7 @@
 						var endX = evt.clientX;
 						var endY = evt.clientY;
 						
-						x -= (endY - starY)*0.3;
+						x -= (endY - starY)*0.2;
 						y += (endX - starX)*0.2;
 						
 					obox.style.transform = 'perspective(2000px) rotateX('+x+'deg) rotateY('+y+'deg)';

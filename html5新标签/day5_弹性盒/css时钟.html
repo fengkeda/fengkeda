@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>时钟</title>
+		<style>
+			.box{
+				/*transform-style: preserve-3d;*/
+				/*transform: perspective(1600px);*/
+				margin: 0 auto;
+				position: relative;
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+				border: 8px solid black;
+			}
+			.box::before{
+				width: 20px;
+				height: 20px;
+				position: absolute;
+				left: 90px;
+				top:90px;
+				border-radius: 50%;
+				background-color: black;
+				content: "";
+				 
+			}
+			span{
+				position: absolute;
+				transform-origin: center center;
+				left:50%;
+				top: 50%;
+				}
+			.integer{
+				width: 8px;
+				height: 16px;
+				background-color:gray;
+			}
+			.integer:nth-of-type(1){
+			 	transform:  translateX(88px) translateY(-10px) rotateZ(90deg);
+			}
+			.integer:nth-of-type(2){
+			 	transform: translateY(-100px) translateX(-4px);
+			}
+			.integer:nth-of-type(3){
+			 	transform: translateY(84px) translateX(-4px);
+			}
+			.integer:nth-of-type(4){
+			 	transform:  translateX(-96px) translateY(-6px) rotateZ(90deg);
+			}
+			.dian{
+				width: 4px;
+				height: 10px;
+				background-color: darkgray;
+			}
+			.dian:nth-child(5){
+				transform: rotateZ(30deg) translateY(-98px);
+			}
+			.dian:nth-child(6){
+				transform: rotateZ(60deg) translateY(-96px);
+			}
+			.dian:nth-child(7){
+				transform: rotateZ(120deg) translateY(-91px);
+			}
+			.dian:nth-child(8){
+				transform: rotateZ(150deg) translateY(-90px);
+			}
+			.dian:nth-child(9){
+				transform: rotateZ(-150deg) translateY(-91px);
+			}
+			.dian:nth-child(10){
+				transform: rotateZ(-120deg) translateY(-94px);
+			}
+			.dian:nth-child(11){
+				transform: rotateZ(-60deg) translateY(-100px);
+			}
+			.dian:nth-child(12){
+				transform: rotateZ(-30deg) translateY(-100px);
+			}
+			.hours{
+				transform-origin: center bottom;
+				top: 45px;
+				left: 95px;
+				border-radius: 5px;
+				width: 10px;
+				height: 50px;
+				background-color: black;
+				animation: secrun 21600s infinite;
+			}
+			.minues{
+				transform-origin: center bottom;
+				width: 6px;
+				height: 70px;
+				background-color: black;
+				border-radius: 5px;
+				left: 97px;
+				top: 30px;
+				animation: secrun 3600s infinite;
+			}
+			.second{
+				width: 4px;
+				height: 80px;
+				background-color: red;
+				border-radius: 5px;
+				left: 98px;
+				top: 20px;
+				animation: secrun 60s linear infinite;
+				transform-origin: center bottom;
+			}
+			
+			@keyframes secrun{
+				from{transform: rotateZ(0deg);}
+				to{transform: rotateZ(360deg);}
+			}
+			 
+		
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<span class="integer"></span>
+			<span class="integer"></span>
+			<span class="integer"></span>
+			<span class="integer"></span>	
+			<span class="dian"></span>
+			<span class="dian"></span>
+			<span class="dian"></span>
+			<span class="dian"></span>
+			<span class="dian"></span>
+			<span class="dian"></span>
+			<span class="dian"></span>
+			<span class="dian"></span>
+			<span class="hours"></span>
+			<span class="minues"></span>
+			<span class="second"></span>
+		</div>
+	</body>
+<html>

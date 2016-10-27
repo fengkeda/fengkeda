@@ -44,8 +44,9 @@
 		    .aa{width: 200px;height: 200px; transition: transform 2s; transform-origin:right bottom;margin: 0 auto;}
 			 .box2{position: relative;border: 2px solid #FF6600;
 			      width: 300px;height: 60px;border-radius: 12px;
+			      top: -160px;left: -200px;
 			      text-align: center;line-height: 60px;color: red;font-weight: bold;font-size: 24px;
-			      opacity: 1;transition:all 1s;}
+			      opacity: 0;transition:all 1s;}
 			 .box2::after{
 			 	  content: '';
 			 	  position: absolute;
@@ -67,15 +68,16 @@
 			      }
 			.txt{display: block;width:50px ;height: 25px;background: cornflowerblue;text-align: center;line-height: 25px;border-radius: 8px;color: #fff;
 			    margin-left: 220px;margin-top: 70px;
+			    position: relative;
 			    }
-			 .txt:hover .box2{top: 200px;opacity: 0;}   
+			 .txt:hover .box2{top: -130px;opacity: 1;}   
 		</style>
 	</head>
 	<body>
 		<div class="aa">
 		<div class="box"></div>
 		</div>
-		<div class="box2">消息对话框</div>
-		<span class="txt">百度</span>
+	
+		<span class="txt">百度	<div class="box2">消息对话框</div></span>
 	</body>
 </html>

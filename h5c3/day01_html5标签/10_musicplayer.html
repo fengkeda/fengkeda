@@ -5,6 +5,20 @@
 	<title>自定义音乐播放器</title>
 	<link rel="stylesheet" href="font/iconfont.css">
 	<link rel="stylesheet" href="css/style.css">
+
+	<script src="js/app.js"></script>
+	<!-- 
+		html5播放器
+		1）ajax加载数据
+		2）暂停/播放
+		3）上一曲/下一曲
+		4）点击歌曲列表播放
+		5）静音
+		6）点击改变播放进度
+		7）实时显现播放进度（时间显示）
+		8）支持播放模式：
+			0:单曲播放,1:单曲循环,2:列表播放,3:列表循环,4:随机播放
+	-->
 </head>
 <body>
 	<div class="player">
@@ -21,7 +35,7 @@
 			<section class="controls">
 				<h1 class="title">陈奕迅-十年</h1>
 				<div class="play-status">
-					<progress max="100" value="20"></progress>
+					<progress max="100" value="0"></progress>
 					<time class="left">-00:16</time>
 				</div>
 				<div class="play-model">
@@ -33,9 +47,6 @@
 			</section>
 		</header>
 		<section class="list">
-			<ol>
-				<li>陈奕迅-十年</li>
-			</ol>
 		</section>
 	</div>
 </body>

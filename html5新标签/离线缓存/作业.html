@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			section{background:#f2f2f2;width:400px;margin: 50px auto;padding: 20px;border: 2px solid #ddd;}
+		    ul{list-style: none;}
+		    ul li span{margin: 0 20px;}
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				var obtn = document.querySelectorAll('button');
+				var otxt = document.querySelectorAll('textarea');
+				var olist = document.querySelector('.list');
+				
+				var datalist = localStorage.getItem('datalist');//这里得到的有可能为null
+				datalist = datalist ? JSON.parse(datalist) : [];
+				
+				var datalist2 = localStorage.getItem('datalist2');//这里得到的有可能为null
+				datalist2 = datalist2 ? JSON.parse(datalist2) : [];
+				
+				obtn[3].onclick = function(){
+					if(otxt[0].value == ""||otxt[1].value==""){
+						return "";
+					}else{
+					datalist.push(otxt[0].value);
+					datalist2.push(otxt[1].value);
+				    
+				    localStorage.setItem('datalist',JSON.stringify(datalist));
+				    localStorage.setItem('datalist2',JSON.stringify(datalist2));
+				    }
+//				    var oli = document.createElement('li');
+//
+//				    var ob = document.createElement('span');
+//              	     var ob2 = document.createElement('span');
+//				        ob.innerHTML = otxt[0].value;
+//				         ob2.innerHTML ="————"+ otxt[1].value;
+//				         oli.appendChild(ob);
+//				         oli.appendChild(ob2);
+//				         
+//				        olist.appendChild(oli);
+				    
+				    otxt[0].value='';
+				     otxt[1].value='';
+				}												
+          		
+                var i = 0;
+                obtn[0].onclick =function(){                
+                	i--;
+                	if(i<0){
+                		i=0;
+                		obtn[0].disabled =i=0;
+                	}
+                	
+                
+                	otxt[0].value = datalist[i];
+                    otxt[1].value = datalist2[i];
+                	
+                } 
+                obtn[1].onclick =function(){
+                
+                	i++;
+                	if(i>datalist.length-1){
+                		i=datalist.length-1;
+                		obtn[1].disabled =i=datalist.length-1;
+                	}
+                	 	
+                	otxt[0].value = datalist[i];
+                    otxt[1].value = datalist2[i];
+                }
+                
+                obtn[2].onclick = function(){
+                	olist.innerHTML = '';
+                	var newtime = new Date();
+                	for(var i = 0; i < datalist.length;i++){
+                	    var oli = document.createElement('li');
+                	    oli.innerHTML = "<h5>"+datalist[i]+"</h5><p>"+datalist2[i]+"</p><time>"+newtime+"</time>";
+				         
+				       olist.appendChild(oli);
+                	}
+                	
+                
+                }	
+                //删除
+                obtn[4].onclick = function(){
+                  	var word = otxt[0].value;
+                  	var chine = otxt[1].value;
+                  	
+                  	if(word == "" || chine == ""){
+                  		return "";
+                  	}else{
+                  		for (var i =0;i<datalist.length;i++) {
+                  			if(datalist[i] == word){
+                  				datalist.splice(i,1);
+                  				datalist2.splice(i,1);
+                  				localStorage.setItem('datalist',JSON.stringify(datalist));
+				                localStorage.setItem('datalist2',JSON.stringify(datalist2));
+                  				otxt[0].value = "";
+                  				otxt[1].value = "";
+                  			}                  			                  			
+                  		}
+                  		var oLi=document.querySelectorAll(".list li");
+						for (var i=0;i<oLi.length;i++) {
+							var ob=oLi[i].querySelectorAll("span")[0];
+							otext=ob.innerHTML;
+							if (otext == word) {
+								olist.removeChild(oLi[i]);
+							}
+						}
+                  	}
+                  }
+              
+			})
+		</script>
+	</head>
+	<body>
+		<section>
+			<h1>英语单词记事本</h1>
+			<label>回顾：</label><button>上一个</button><button>下一个</button><button>显示所有</button>
+		    <h3>单词：</h3>
+		    <textarea cols="40" rows="4"></textarea>
+		    <h3>中文解释：</h3>
+		    <textarea cols="40" rows="4"></textarea><br>
+		    <button>保存</button>  <button>删除</button><br>
+		    <ul class="list">
+		    	
+		    </ul>
+		</section>
+	</body>
+</html>

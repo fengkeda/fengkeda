@@ -1,0 +1,13 @@
+body,html{width: 100%;}
+ul{list-style: none;margin: 0;padding: 0;}
+body{padding: 10px;display: flex;flex-wrap: wrap;flex-direction: column;}
+img{width: 200px;}
+
+header,footer{height: 50px;line-height: 50px;background-color: #387ef5;color:#fff;}
+header h1{margin:0;font-size:26px;}
+header{text-align: center;}
+.box{flex: 1;}
+.box ul{display: flex;flex-wrap: wrap;}
+ ul li{margin:10px;}
+nav a{text-decoration: none;flex: 1;color: #fff;}
+nav{display:flex;text-align: center;}

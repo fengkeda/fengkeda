@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			canvas{border: 1px solid #ddd;}
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				var canvas = document.querySelector('canvas');
+				
+				canvas.width =canvas.height = 600;
+				
+				var ctx = canvas.getContext('2d');
+				
+				var img = new Image();
+				img.src = "yy_5.jpg";
+				img.onload = function(){
+					ctx.drawImage(img,0,0,270,270*img.height/img.width);
+				    ctx.drawImage(img,200,150,200,200,300,200,300,200);
+				}
+				
+			})
+		</script>
+	</head>
+	
+	<body>
+		<canvas></canvas>
+	</body>
+</html>

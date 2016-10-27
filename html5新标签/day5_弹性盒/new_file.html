@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			section{width: 200px;height: 200px;margin: 200px auto;
+				position: relative;transform-style: preserve-3d;
+				transform: perspective(1600px) rotateX(30deg);display: flex;}
+			section div{width: 200px;height: 200px;text-align: center;
+				line-height: 200px;position: absolute;display: flex;
+				justify-content: center;align-items: center;flex-wrap: wrap;}
+			section div span{display: block;width: 30px;height: 30px;background: black;
+			border-radius:50% ;margin: 13px;}
+			section div:nth-child(6) span:nth-child(1){align-self:flex-start ;}
+			section div:nth-child(6) span:nth-child(3){align-self:flex-end;}
+			section div:nth-child(4) span{margin:10px 30px;}
+			section div:nth-child(4) span:nth-child(3){margin: 0 80px;}
+			section div:nth-child(5) span{margin: 20px;}
+		</style>
+		<script type="text/javascript">
+			document.addEventListener("DOMContentLoaded",function(){
+				var eBox=document.querySelectorAll("section div");
+				var eDiv=document.querySelector("section");
+				var angle=90;
+				var radian=angle/2*Math.PI/180;
+				var x=100/Math.tan(radian);
+				for (var i=0;i<4;i++) {
+					eBox[i].style.transform="rotateY("+i*90+"deg) translateZ("+ x +"px)"
+				}
+				eBox[4].style.transform="rotateX("+90+"deg) translateZ("+ x +"px)";
+				eBox[5].style.transform="rotateX("+(-90)+"deg) translateZ("+ x +"px)";
+				//鼠标事件
+				//初始旋转的角度
+				var angleX=30;
+				var angleY=0;
+				document.onmousedown=function(e){
+					var starX=e.clientX;
+					var starY=e.clientY;
+					document.onmousemove=function(evt){
+						var endX=evt.clientX;
+						var endY=evt.clientY;
+						angleX-=(endY-starY)*0.2;
+						angleY+=(endX-starX)*0.2;
+						eDiv.style.transform="perspective(1600px) rotateX("+ angleX +"deg) rotateY("+ angleY +"deg)";
+						starX=endX;
+						starY=endY;
+						evt.preventDefault();
+					}
+					e.preventDefault();
+				}
+				document.onmouseup=function(){
+					document.onmousemove=null;
+				}
+			});
+		</script>
+	</head>
+	<body style="background: gray;">
+		<section>
+			<div class="cubic1" style="background-color:white ;">
+				<span></span>
+			</div>
+			<div class="cubic2" style="background-color:white ;">
+				<span></span><span></span>
+			</div>
+			<div class="cubic3" style="background-color:white ;">
+				<span></span><span></span><span></span>
+				<span></span><span></span><span></span>
+			</div>
+			<div class="cubic4" style="background-color:white;">
+				<span></span><span></span><span></span><span></span>
+				<span></span>
+			</div>
+			<div class="cubic5" style="background-color:white ;">
+				<span></span><span></span><span></span><span></span>
+			</div>
+			<div class="cubic6" style="background-color:white;">
+				<span></span><span></span><span></span>
+			</div>
+		<ction>
+	</body>
+<ml>

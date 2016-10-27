@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 750px;
+				margin: 200px auto;
+			}
+			nav{
+				/*overflow: hidden;*/
+				height: 40px;
+				width: 750px;
+				transform-origin: left top;
+				transition: all 2s;
+				transform-style: preserve-3d;
+			}
+			nav span{
+				display: block;
+				float: left;
+				width: 150px;
+				height: 40px;
+				color: #fff;
+				font-weight: bold;
+				background: #8A2BE2;
+				line-height: 40px;
+				text-align: center;
+			}
+			.nav1{
+				position: relative;transform-style: preserve-3d;
+			}
+			.nav1 span{
+				background: #286090;
+				transform-origin: left top;
+				transform: rotateX(90deg);
+				position: absolute;
+				top:0px;
+			}
+			.nav1 span:nth-child(1){
+				transition: all 2s 0.2s;
+				left: 0;
+			}
+			.nav1 span:nth-child(2){
+				transition: all 2s  0.4s;
+				left: 150px;
+			}
+			.nav1 span:nth-child(3){
+				transition: all 2s  0.6s;
+				left: 300px;
+			}
+			.nav1 span:nth-child(4){
+				transition: all 2s  0.8s;
+				left: 450px;
+			}
+			.nav1 span:nth-child(5){
+				transition: all 2s  1s;
+				left: 600px;
+			}
+			
+			.nav span:nth-child(1){
+				transition: all 2s 0.2s;
+			}
+			.nav span:nth-child(2){
+				transition: all 2s  0.4s;
+			}
+			.nav span:nth-child(3){
+				transition: all 2s  0.6s;
+			}
+			.nav span:nth-child(4){
+				transition: all 2s  0.8s;
+			}
+			.nav span:nth-child(5){
+				transition: all 2s  1s;
+			}
+			
+			.nav:hover span{
+				transform: rotateX(90deg);
+			}
+			.nav:hover ~ .nav1 span{
+				transform: rotateX(0deg) ;
+				top: -40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<nav class="nav">
+				<span>导航首页</span>
+				<span>导航首页</span>
+				<span>导航首页</span>
+				<span>导航首页</span>
+				<span>千锋互联</span>
+			</nav>
+			<nav class="nav1">
+				<span>翻转翻转</span>
+				<span>翻转翻转</span>
+				<span>翻转翻转</span>
+				<span>翻转翻转</span>
+				<span>翻转翻转</span>
+			</nav>
+		</div>
+	</body>
+<html>

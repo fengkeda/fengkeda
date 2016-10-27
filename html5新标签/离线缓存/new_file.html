@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>英语单词记事本</title>
+		<script type="text/javascript">
+			document.addEventListener("DOMContentLoaded",function(){
+				//获取元素节点
+				var oBtn=document.querySelectorAll(".btn button");
+				var oIpt=document.querySelectorAll(".ipt textarea");
+				var eBtn=document.querySelectorAll(".ipt button");
+				var oList=document.querySelector(".list");
+				var datalist=localStorage.getItem("list");
+				datalist=datalist?JSON.parse(datalist) : [];
+				//点击保存按钮
+				eBtn[0].onclick=function(){
+					var word=oIpt[0].value;//获取文本框的值
+					var chine=oIpt[1].value;
+					if (word == "" || chine == "") {
+						return "";
+					}else{
+						oIpt[0].value="";
+						oIpt[1].value="";
+						var time=new Date();
+						//生成li加入到ul中
+						var oli=document.createElement("li");
+						var op1=document.createElement("b");
+						var op2=document.createElement("p");
+						var op3=document.createElement("p");
+						op1.innerHTML=word;
+						op2.innerHTML=chine;
+						op3.innerHTML=time;
+						oli.appendChild(op1);
+						oli.appendChild(op2);
+						oli.appendChild(op3);
+						oList.appendChild(oli);
+						//生成对象,保存获得值
+						var item={}
+						item.en=word;
+						item.cn=chine;
+						item.d=time; 
+						//存储到本地
+						datalist.push(item);
+						localStorage.setItem("list",JSON.stringify(datalist));
+					}
+				}
+				//点击删除按钮
+				eBtn[1].onclick=function(){
+					//获取文本框中的值
+					var word=oIpt[0].value;
+					var chine=oIpt[1].value;
+					if (word == "" || chine == "") {
+						return "";
+					}else{
+						for (var i =0;i<datalist.length;i++) {
+							if (datalist[i].en == word) {
+								datalist.splice(i,1);
+								localStorage.setItem("list",JSON.stringify(datalist));
+								oIpt[0].value="";
+								oIpt[1].value="";
+							}
+						}
+						var oli=document.querySelectorAll(".list li");
+						for (var i=0;i<oli.length;i++) {
+							var ob=oli[i].querySelector("b");
+							otext=ob.innerHTML;
+							if (otext == word) {
+								oList.removeChild(oli[i]);
+							}
+						}
+						
+					}
+					if (datalist !=null) {
+						oIpt[0].value=datalist[0].en;
+						oIpt[1].value=datalist[0].cn;
+					}
+				}
+				//点击显示所有按钮
+				oBtn[2].onclick=function(){
+					oList.innerHTML="";
+					for (var i=0;i<datalist.length;i++) {
+						//生成li加入到ul中
+						var oli=document.createElement("li");
+						var op1=document.createElement("b");
+						var op2=document.createElement("p");
+						var op3=document.createElement("p");
+						op1.innerHTML=datalist[i].en;
+						op2.innerHTML=datalist[i].cn;
+						op3.innerHTML=datalist[i].d;
+						oli.appendChild(op1);
+						oli.appendChild(op2);
+						oli.appendChild(op3);
+						oList.appendChild(oli);
+					}
+					if (datalist != null) {
+						oIpt[0].value=datalist[0].en;
+						oIpt[1].value=datalist[0].cn;
+					}
+				}
+				//点击上一个按钮
+				var len=datalist.length-1;
+				oBtn[0].onclick=function(){
+					if (len1 == 0) {
+						oIpt[0].value=datalist[0].en;
+						oIpt[1].value=datalist[0].cn;
+					}else{
+						len1--;
+						len2++;
+						oIpt[0].value=datalist[len1].en;
+						oIpt[1].value=datalist[len1].cn;
+					}
+				}
+				//点击下一个按钮
+				oBtn[1].onclick=function(){
+					if (len2 == datalist.length-1) {
+						oIpt[0].value=datalist[len2].en;
+						oIpt[1].value=datalist[len2].cn;
+					}else{
+						len1++;
+						len2--;
+						oIpt[0].value=datalist[len2].en;
+						oIpt[1].value=datalist[len2].cn;
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<section>
+			<h2>英语单词记事本</h2>
+			<div class="btn">
+				回顾:<button>上一个<tton><button>下一个<tton><button>显示所有<tton>
+			</div>
+			<div class="ipt">
+				<h3>单词:</h3>
+				<textarea  rows="3" cols="30"></textarea>
+				<h3>中文:</h3>
+				<textarea  rows="3" cols="30"></textarea>
+				<p><button>保存<tton><button>删除<tton></p>
+			</div>
+			<ul class="list">
+			</ul>
+		<ction>
+	</body>
+<html>

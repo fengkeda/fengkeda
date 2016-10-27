@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				var otxt = document.querySelector('.a1');
+				var obtn = document.querySelectorAll('button');
+				var bb = document.querySelector('.bb');
+				
+				obtn[0].onclick = function(){
+					sessionStorage.setItem('name',otxt.value);
+				}
+				
+				obtn[1].onclick = function(){
+					bb.innerHTML  = sessionStorage.getItem('name');
+				}
+			})
+		</script>
+	</head>
+	<body>
+		<input class="a1" type="text"/><button>保存</button><button>读取</button>
+	    <div class="bb"></div>
+	</body>
+</html>

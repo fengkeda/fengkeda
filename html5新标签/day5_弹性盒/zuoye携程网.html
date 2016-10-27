@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title></title>
+		<style>
+		    *{padding: 0;margin: 0;}
+		    body{font-family: "微软雅黑";}
+			header,footer{height:116px;width: 100%;display:flex;}
+			header img{justify-content:center;display: block;width: 100%;}
+		   
+		    footer img:nth-child(n){width: 50%;justify-content:center;display: block;flex: 1;}
+		   
+		    .bigbox{overflow: hidden;width: 100%;}
+		    .bigbox section{color:#fff;justify-content: center;border-radius:8px;margin:5px;display: flex;overflow: hidden;width: 100%;background: #0000ff;}
+		    .bigbox section:nth-child(1){background: #ff697a;}
+		    
+		 /*   section div{height: 90px;border-right:1px solid #fff;} */
+		    .bigbox section div:nth-child(1){flex:1;}
+		    .bigbox section div:nth-child(2){flex:2;display: flex;flex-wrap: wrap;justify-content:flex-start;}
+		    .bigbox section div:nth-child(2) span{padding: 3% 20%;flex: 1;text-align: center;
+				border-left: 1px solid white;border-bottom: 1px solid white;}
+			.bigbox section:nth-child(4){display: flex;flex-wrap: wrap;justify-content:flex-start;}
+		.bigbox section:nth-child(4) span{
+			flex: 1;text-align: center;padding: 3% 12%;border-left: 1px solid white;border-bottom: 1px solid white;
+		}
+		</style>
+	</head>
+	<body>
+		<header>	
+			<img src="banner.jpg"/>
+		</header>
+		<section class="bigbox">
+			<section class="box1">
+			    <div>
+			    </div>
+			
+			<div>
+				<span>海外酒店</span>
+					<span>团购</span>
+					<span>特惠酒店</span>
+					<span>客栈公寓</span>
+			</div>	
+			
+			</section>
+			
+			<section class="box2">
+			<div >
+			</div>
+			
+			<div>
+					<span>海外酒店</span>
+					<span>团购</span>
+					<span>特惠酒店</span>
+					<span>客栈公寓</span>
+			</div>	
+			
+			</section>
+			<section class="box3">
+				<div>
+			</div>
+			
+			<div>
+				<span>海外酒店</span>
+					<span>团购</span>
+					<span>特惠酒店</span>
+					<span>客栈公寓</span>
+			</div>	
+			
+			</section>
+			<section class="box4">
+				<span>海外酒店</span>
+				<span>团购</span>
+				<span>特惠酒店</span>
+				<span>客栈公寓</span>
+				<span>特惠酒店</span>
+				<span>客栈公寓</span>
+			</section>
+		</section>
+		<footer>
+		    <img src="extra_1.png"/>	
+			<img src="extra_2.png"/>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		    *{padding: 0;margin: 0;}
+		    img{width: 387px;height: 500px;display: block;}
+		    li{list-style: none;}
+		    ul{width: 387px;position: relative;animation: run 10s infinite;}
+			.box{width: 387px;height: 500px;position: relative;top: 50px;left: 400px;border: 1px solid black;overflow: hidden;}
+	        .box2{height: 30px;width: 200px;position: absolute;z-index: 999;bottom: 0;right: 0;}
+			.box2 a{display: block;width: 30px;height: 4px;text-align: center;margin-left:10px;float:right;background: cadetblue;border-radius: 5px;}
+	        
+	        @-webkit-keyframes run{
+	        	0%{}
+	        	15%{transform: translateY(0);}
+	        	
+	        	20%{transform: translateY(-500px);}
+	        	35%{transform: translateY(-500px);}
+	        	
+	        	40%{transform: translateY(-1000px);}
+	        	55%{transform: translateY(-1000px);}
+	        	
+	        	60%{transform: translateY(-1500px);}
+	        	75%{transform: translateY(-1500px);}
+	        	
+	        	80%{transform: translateY(-2000px);}
+	        	95%{transform: translateY(-2000px);}
+	        	
+	        	/*95.1%{transform: translateY(0);}*/
+	        	
+	        	100%{transform: translateY(-2500px);}
+	        }
+	         @-webkit-keyframes run{
+	        	0%{}
+	        	15%{transform: translateY(0);}
+	        	
+	        	20%{transform: translateY(-500px);}
+	        	35%{transform: translateY(-500px);}
+	        	
+	        	40%{transform: translateY(-1000px);}
+	        	55%{transform: translateY(-1000px);}
+	        	
+	        	60%{transform: translateY(-1500px);}
+	        	75%{transform: translateY(-1500px);}
+	        	
+	        	80%{transform: translateY(-2000px);}
+	        	95%{transform: translateY(-2000px);}
+	        	
+	        	/*95.1%{transform: translateY(0);}*/
+	        	
+	        	100%{transform: translateY(-2500px);}
+	        } 
+	        @-webkit-keyframes run2{
+	        	0%{left: 0px;}
+	        	15%{left:0px;}
+	        	
+	        	20%{left: 40px;}
+	        	35%{left: 40px;}
+	        	
+	        	40%{left: 80px;}
+	        	55%{left: 80px;}
+	        	
+	        	60%{left: 120px;}
+	        	75%{left: 120px;}
+	        	
+	        	80%{left: 160px;}
+	        	95%{left: 160px;}
+	        	
+	        	95.1%{left: 0px;}
+	        	
+	        	100%{left: 0px;}
+	        }
+	        #last{position: absolute;background: #CC4400;animation: run2 10s infinite;}
+	    </style>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li><img src="../images/yy_1.jpg" alt="" /></li>
+				<li><img src="../images/yy_2.png" alt="" /></li>
+				<li><img src="../images/yy_3.jpg" alt="" /></li>
+				<li><img src="../images/yy_4.png" alt="" /></li>
+				<li><img src="../images/yy_5.jpg" alt="" /></li>
+			    <li><img src="../images/yy_1.jpg" alt="" /></li>
+				
+			</ul>
+			<div class="box2">
+			<a href="#a1"></a>
+			<a href="#a2"></a>
+			<a href="#a3"></a>
+			<a href="#a4"></a>
+			<a href="#a5"></a>
+			<a href="#" id="last"></a>
+			
+			
+		</div>
+		</div>
+	</body>
+</html>

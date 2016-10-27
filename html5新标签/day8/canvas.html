@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			canvas{border: 1px solid #ddd;}
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				var canvas = document.querySelector('canvas');
+				
+				canvas.width =canvas.height = 600;
+				
+				var ctx = canvas.getContext('2d');
+				
+//				ctx.moveTo(100,100);
+//				
+//				ctx.lineTo(300,100);
+//				ctx.lineTo(300,300);
+//				ctx.lineTo(100,300);
+//				
+//				ctx.closePath();
+                var n = 180*Math.PI/180;
+                ctx.arc(300,300,100,0,n,true);
+                
+                ctx.rect(200,300,200,200);
+				
+				
+				ctx.fillStyle = "yellow";
+				ctx.fill();
+				
+				ctx.lineWidth = 10;
+				
+				ctx.stroke();
+				
+				
+			})
+		</script>
+	</head>
+	
+	<body>
+		<canvas></canvas>
+	</body>
+</html>
