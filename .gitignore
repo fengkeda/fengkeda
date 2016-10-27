@@ -1,6 +1,7 @@
 /project/
 /share/
 media/
+node_modules/
 
 *.zip
 *.mp3
