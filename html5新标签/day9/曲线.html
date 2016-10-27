@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			canvas{border: 1px solid #ddd;}
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				var canvas = document.querySelector('canvas');
+				canvas.width = canvas.height = 600;
+				var ctx = canvas.getContext('2d');
+				
+				ctx.moveTo(100,35);
+				ctx.quadraticCurveTo(100,200,360,50);
+				ctx.moveTo(100,90);
+				ctx.quadraticCurveTo(100,180,260,50);
+				
+//				ctx.quadraticCurveTo(300,200,300,100);
+				
+				ctx.stroke();
+			})
+		</script>
+	</head>
+	<body>
+		<canvas></canvas>
+	</body>
+</html>

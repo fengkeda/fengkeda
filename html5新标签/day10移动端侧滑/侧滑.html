@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1"/>
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;}
+			ul,li{list-style: none;}
+			h3{padding:10px;height: 30px;width: 100%;background: #387ef5;text-align: center;line-height: 30px;color: #fff;}
+		    .main_img img{width: 250px;}
+		    li img{width: 40px;height: 40px;vertical-align: top;margin-right:5px ;}		   		   
+		    nav{background:#fff;width: 120px;top: 0;z-index: 999;transition: all 1s;transform: translateX(-120px);position: absolute;}
+		    li{z-index: 999;padding: 5px;}
+		    section{padding: 10px;position: relative;}
+		    .active{transform: translateX(0px);}
+		    .main{display: flex;}
+		
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				var nav = document.querySelectorAll('nav')[0];
+				var section = document.querySelectorAll('section')[0];
+				
+				var starX,endX,disX;
+				section.addEventListener('touchstart',function(e){
+					starX  = e.changedTouches[0].pageX;
+				
+				})
+				section.addEventListener('touchmove',function(e){
+					endX  = e.changedTouches[0].pageX;
+					
+					disX = endX - starX;
+					
+					if(disX > 0){
+						if(disX > 100){
+							nav.classList.add("active");
+						}
+						
+					}else{
+						nav.classList.remove("active");
+					}
+					
+				})
+				
+			    
+			})
+		</script>
+	</head>
+	<body>
+		<header>
+			<h3>首页</h3>
+		</header>
+		<section>
+			<div class="main">
+				<div class="main_img"><img src="../images/yy_3.jpg"/></div>
+			</div>
+			<nav>
+				<ul>
+					<li><img src="../images/yy_1.jpg">美女1</li>
+			
+			
+					<li><img src="../images/yy_2.png">美女2</li>
+				
+				
+					<li><img src="../images/yy_3.jpg">美女3</li>
+			
+				
+					<li><img src="../images/yy_4.png">美女4</li>
+				
+				
+					<li><img src="../images/yy_5.jpg">美女5</li>
+				</ul>
+			</nav>
+		</section>
+	</body>
+</html>
