@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_es5数组方法</title>
+	<script>
+		var arr = [10,20,3,15,35];
+
+		// 判断数组项是否都大于10
+		/*var res = true;
+		for(var i=0;i<arr.length;i++){
+			if(arr[i] < 10){
+				res = false
+				break;
+			}
+		}
+		console.log(res);*/
+
+		var res = arr.every(function(item){
+			return item >= 10;
+		});
+		console.log(res);
+
+		var res2 = arr.some(function(num){
+			return num < 5;
+		});
+
+		console.log(res2);
+
+
+		var users = [{
+            name: "赵丽颖",
+            email: "zly@163.com",
+            mobile:15964546845
+        },{
+            name: "蒋欣",
+            email: "jx@qq.com",
+            mobile:1895645236
+        },{
+            name: "张含韵",
+            email: "zhy@gmail.com",
+            mobile:13825564589
+        }, {
+            name: "江一燕",
+            email: "jyy@gmail.com",
+            mobile:15825565400
+        }, {
+            name: "李小璐",
+            email: "lxl@gmail.com",
+            mobile:18868745984
+        }];
+
+        // 提取手机号
+        var tel = users.map(function(item){
+        	return item.name + '：' + item.mobile
+        });
+        console.log(tel);
+
+        var res3 = arr.filter(function(num){
+        	return num <= 15
+        })
+        console.log(res3);
+
+        // 获得数组的平方数
+        var res4 = arr.map(function(number){
+
+        	return number * number
+        });
+
+        console.log(res4);
+
+        var arr5 = [1,2,3,4,5];
+        var total = arr5.reduce(function(prev,current){
+        	console.log(prev,current)
+        	return prev + current
+        },10);
+        console.log(total);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
