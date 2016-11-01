@@ -1,0 +1,14 @@
+$one:#387ef5;
+$tow:lighten($one,10%);
+
+/*哈哈哈，小豆比*/
+body{font-family: "微软雅黑";font-size: 13px;}
+a{color: $one;}
+.header{
+    height: 48px;
+    display: flex;
+    background: blueviolet;
+}
+.header a{flex: 1;color: white;
+text-decoration: none;
+}
